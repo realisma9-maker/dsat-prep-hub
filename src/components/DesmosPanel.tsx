@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Calculator, Maximize2, Minimize2, X, GripVertical } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+// Desmos API Key
+const DESMOS_API_KEY = 'dbf7cee828ed4d9fb809d780f559cab6';
+
 interface DesmosPanelProps {
   isCollapsed: boolean;
   onToggleCollapse: () => void;
@@ -9,13 +12,74 @@ interface DesmosPanelProps {
 
 export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [size, setSize] = useState({ width: 400, height: 350 });
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [size, setSize] = useState({ width: 450, height: 400 });
+  const [position, setPosition] = useState({ x: 100, y: 100 });
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const calculatorRef = useRef<HTMLDivElement>(null);
+  const calculatorInstance = useRef<any>(null);
   const dragStart = useRef({ x: 0, y: 0 });
   const resizeStart = useRef({ width: 0, height: 0, x: 0, y: 0 });
+
+  // Load Desmos API script
+  useEffect(() => {
+    if (!document.getElementById('desmos-api-script')) {
+      const script = document.createElement('script');
+      script.id = 'desmos-api-script';
+      script.src = `https://www.desmos.com/api/v1.9/calculator.js?apiKey=${DESMOS_API_KEY}`;
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }, []);
+
+  // Initialize calculator when panel opens
+  useEffect(() => {
+    if (isCollapsed || !calculatorRef.current) return;
+
+    const initCalculator = () => {
+      if ((window as any).Desmos && calculatorRef.current && !calculatorInstance.current) {
+        calculatorInstance.current = (window as any).Desmos.GraphingCalculator(calculatorRef.current, {
+          keypad: true,
+          expressions: true,
+          settingsMenu: true,
+          zoomButtons: true,
+          expressionsTopbar: true,
+          pointsOfInterest: true,
+          trace: true,
+          border: false,
+          lockViewport: false,
+        });
+      }
+    };
+
+    // Wait for Desmos to load
+    if ((window as any).Desmos) {
+      initCalculator();
+    } else {
+      const checkDesmos = setInterval(() => {
+        if ((window as any).Desmos) {
+          initCalculator();
+          clearInterval(checkDesmos);
+        }
+      }, 100);
+      return () => clearInterval(checkDesmos);
+    }
+
+    return () => {
+      if (calculatorInstance.current) {
+        calculatorInstance.current.destroy();
+        calculatorInstance.current = null;
+      }
+    };
+  }, [isCollapsed]);
+
+  // Resize calculator when size changes
+  useEffect(() => {
+    if (calculatorInstance.current) {
+      calculatorInstance.current.resize();
+    }
+  }, [size, isFullscreen]);
 
   // Handle dragging
   useEffect(() => {
@@ -24,7 +88,10 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
     const handleMouseMove = (e: MouseEvent) => {
       const dx = e.clientX - dragStart.current.x;
       const dy = e.clientY - dragStart.current.y;
-      setPosition(prev => ({ x: prev.x + dx, y: prev.y + dy }));
+      setPosition(prev => ({
+        x: Math.max(0, Math.min(window.innerWidth - size.width, prev.x + dx)),
+        y: Math.max(0, Math.min(window.innerHeight - size.height - 100, prev.y + dy)),
+      }));
       dragStart.current = { x: e.clientX, y: e.clientY };
     };
 
@@ -36,7 +103,7 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging]);
+  }, [isDragging, size]);
 
   // Handle resizing
   useEffect(() => {
@@ -46,8 +113,8 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
       const dx = e.clientX - resizeStart.current.x;
       const dy = e.clientY - resizeStart.current.y;
       setSize({
-        width: Math.max(300, resizeStart.current.width + dx),
-        height: Math.max(250, resizeStart.current.height + dy),
+        width: Math.max(300, Math.min(800, resizeStart.current.width + dx)),
+        height: Math.max(250, Math.min(600, resizeStart.current.height + dy)),
       });
     };
 
@@ -63,12 +130,14 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
 
   const handleDragStart = (e: React.MouseEvent) => {
     if (isFullscreen) return;
+    e.preventDefault();
     setIsDragging(true);
     dragStart.current = { x: e.clientX, y: e.clientY };
   };
 
   const handleResizeStart = (e: React.MouseEvent) => {
     e.stopPropagation();
+    e.preventDefault();
     setIsResizing(true);
     resizeStart.current = { 
       width: size.width, 
@@ -78,23 +147,13 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
     };
   };
 
-  if (isCollapsed) {
-    return (
-      <button
-        onClick={onToggleCollapse}
-        className="panel-collapsible p-4 flex items-center gap-3 hover:bg-secondary/50 transition-colors w-full"
-      >
-        <Calculator className="w-5 h-5 text-primary" />
-        <span className="font-medium text-foreground">Graphing Calculator</span>
-      </button>
-    );
-  }
+  if (isCollapsed) return null;
 
   if (isFullscreen) {
     return (
-      <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm animate-fade-in">
+      <div className="fixed inset-0 z-50 bg-background animate-fade-in">
         <div className="h-full flex flex-col">
-          <div className="flex items-center justify-between p-4 border-b border-border">
+          <div className="flex items-center justify-between p-4 border-b border-border bg-card">
             <div className="flex items-center gap-2">
               <Calculator className="w-5 h-5 text-primary" />
               <span className="font-semibold text-foreground">Desmos Graphing Calculator</span>
@@ -114,13 +173,7 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
               </button>
             </div>
           </div>
-          <div className="flex-1">
-            <iframe
-              src="https://www.desmos.com/calculator"
-              className="w-full h-full border-0"
-              title="Desmos Calculator"
-            />
-          </div>
+          <div ref={calculatorRef} className="flex-1" />
         </div>
       </div>
     );
@@ -130,26 +183,18 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
     <div
       ref={panelRef}
       className={cn(
-        "panel-collapsible",
-        isDragging && "cursor-grabbing",
-        !isFullscreen && "relative"
+        "fixed bg-card rounded-lg border border-border shadow-xl z-40 overflow-hidden",
+        isDragging && "cursor-grabbing select-none"
       )}
-      style={
-        position.x !== 0 || position.y !== 0
-          ? {
-              position: 'fixed',
-              left: `calc(50% + ${position.x}px)`,
-              top: `calc(50% + ${position.y}px)`,
-              transform: 'translate(-50%, -50%)',
-              width: size.width,
-              zIndex: 40,
-            }
-          : { width: '100%' }
-      }
+      style={{
+        left: position.x,
+        top: position.y,
+        width: size.width,
+      }}
     >
       {/* Header */}
       <div
-        className="flex items-center justify-between p-3 border-b border-border cursor-grab active:cursor-grabbing"
+        className="flex items-center justify-between px-3 py-2 border-b border-border bg-muted/50 cursor-grab active:cursor-grabbing"
         onMouseDown={handleDragStart}
       >
         <div className="flex items-center gap-2">
@@ -161,33 +206,29 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
           <button
             onClick={() => setIsFullscreen(true)}
             className="p-1.5 rounded hover:bg-secondary transition-colors"
+            title="Fullscreen"
           >
             <Maximize2 className="w-3.5 h-3.5" />
           </button>
           <button
             onClick={onToggleCollapse}
             className="p-1.5 rounded hover:bg-secondary transition-colors"
+            title="Close"
           >
             <X className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
 
-      {/* Calculator iframe */}
-      <div style={{ height: size.height }}>
-        <iframe
-          src="https://www.desmos.com/calculator"
-          className="w-full h-full border-0"
-          title="Desmos Calculator"
-        />
-      </div>
+      {/* Calculator */}
+      <div ref={calculatorRef} style={{ height: size.height }} />
 
       {/* Resize handle */}
       <div
-        className="absolute bottom-0 right-0 w-4 h-4 cursor-se-resize"
+        className="absolute bottom-0 right-0 w-5 h-5 cursor-se-resize hover:bg-primary/10 transition-colors"
         onMouseDown={handleResizeStart}
       >
-        <svg className="w-full h-full text-muted-foreground/50" viewBox="0 0 24 24">
+        <svg className="w-full h-full text-muted-foreground/60 p-0.5" viewBox="0 0 24 24">
           <path fill="currentColor" d="M22,22H20V20H22V22M22,18H20V16H22V18M18,22H16V20H18V22M18,18H16V16H18V18M14,22H12V20H14V22M22,14H20V12H22V14Z" />
         </svg>
       </div>

@@ -246,9 +246,9 @@ export function PracticeView({ topic, topicName, onBackToTopics }: PracticeViewP
         </div>
       </header>
 
-      {/* Main Content - Centered Question */}
-      <main className="flex-1 flex flex-col">
-        <div className="flex-1 w-full max-w-4xl mx-auto px-4 py-8">
+      {/* Main Content - Full Width Landscape Layout */}
+      <main className="flex-1 flex flex-col overflow-auto">
+        <div className="flex-1 w-full max-w-5xl mx-auto px-6 lg:px-12 py-6">
           <QuestionCard
             question={currentQuestion}
             questionNumber={currentIndex + 1}
