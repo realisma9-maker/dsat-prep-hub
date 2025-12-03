@@ -110,20 +110,28 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  /* MathJax styling - force inline rendering */
-  .MathJax {
-    @apply text-foreground;
+  /* MathJax styling - force ALL elements inline */
+  .MathJax,
+  mjx-container,
+  mjx-container[jax="SVG"],
+  mjx-container[jax="CHTML"],
+  mjx-container svg,
+  mjx-math,
+  mjx-mrow,
+  mjx-mi,
+  mjx-mo,
+  mjx-mn {
     display: inline !important;
+    vertical-align: baseline !important;
   }
 
   mjx-container {
-    display: inline !important;
-    margin: 0 0.12em !important;
+    margin: 0 0.1em !important;
+    padding: 0 !important;
   }
 
-  mjx-container[jax="SVG"] {
-    display: inline !important;
-    vertical-align: middle;
+  .MathJax {
+    @apply text-foreground;
   }
 
   /* Question text should flow naturally as paragraph */
@@ -131,6 +139,11 @@
     line-height: 1.8;
     word-wrap: break-word;
     overflow-wrap: break-word;
+  }
+
+  .question-text mjx-container {
+    display: inline !important;
+    white-space: nowrap;
   }
 
   .question-text p {
