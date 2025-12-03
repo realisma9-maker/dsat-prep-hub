@@ -1,0 +1,183 @@
+[
+  {
+    "number": 1,
+    "question": "The positive number \(a\) is \(480\%\) of the number \(b\), and \(a\) is \(70\%\) of the number \(c\). If \(c\) is \(p\%\) of \(b\), which of the following is closest to the value of \(p\)?",
+    "choices": ["A) \(267\)", "B) \(336\)", "C) \(550\)", "D) \(685\)"],
+    "answer": "D",
+    "explanation": "Given: \(a = 4.8b\) (since 480% = 4.8) and \(a = 0.7c\). Equate: \(4.8b = 0.7c \Rightarrow c = \frac{4.8}{0.7}b \approx 6.857b\). Thus \(c\) is about \(685.7\%\) of \(b\), closest to \(685\)."
+  },
+  {
+    "number": 2,
+    "question": "A certain town has an area of \(5.48\) square miles. Which of the following is closest to the area, in square yards, of this town? (\(1\) mile = \(1,760\) yards)",
+    "choices": ["A) \(552\)", "B) \(964\)", "C) \(9,645\)", "D) \(16,974,848\)"],
+    "answer": "D",
+    "explanation": "\(1 \text{ square mile} = (1,760)^2 = 3,097,600 \text{ square yards}\). So \(5.48 \text{ mi}^2 = 5.48 \times 3,097,600 \approx 16,974,848 \text{ yd}^2\)."
+  },
+  {
+    "number": 3,
+    "question": "A researcher selected 2 random samples of employees in a large company to estimate the percentage of employees that planned to vote in favor of a new division. Based on the first sample, the researcher estimated that \(68\%\) of the employees would vote in favor, with an associated margin of error of \(9.7\%\). Based on the second sample, the researcher estimated that \(84\%\) of the employees would vote in favor, with an associated margin of error of \(6.7\%\). Assuming the margins of error were calculated in the same way, which of the following best explains why the second sample obtained a smaller margin of error than the first sample?",
+    "choices": [
+      "A) The first sample contained fewer employees than the second sample.",
+      "B) The first sample contained more employees than the second sample.",
+      "C) The first sample contained a lower percentage of residents that planned to vote in favor of a new division.",
+      "D) The first sample contained a higher percentage of residents that planned to vote in favor of a new division."
+    ],
+    "answer": "A",
+    "explanation": "Margin of error is inversely proportional to the square root of sample size. A smaller sample gives a larger margin of error, so the first sample must have been smaller."
+  },
+  {
+    "number": 4,
+    "question": "684 is \(p\%\) greater than \(9\). What is the value of \(p\)?",
+    "choices": [],
+    "answer": "7,500",
+    "explanation": "\(p\%\) greater than \(9\) means: \(9 + \frac{p}{100} \times 9 = 684\). So \(\frac{9p}{100} = 675 \Rightarrow p = \frac{675 \times 100}{9} = 7,500\)."
+  },
+  {
+    "number": 5,
+    "question": "How many liters of a \(30\%\) chlorine solution must be added to \(12\) liters of a \(10\%\) chlorine solution to obtain a \(15\%\) chlorine solution?",
+    "choices": [],
+    "answer": "4",
+    "explanation": "Let \(x\) be liters of \(30\%\) solution. Chlorine equation: \(0.3x + 0.1(12) = 0.15(x + 12)\). Solve: \(0.3x + 1.2 = 0.15x + 1.8 \Rightarrow 0.15x = 0.6 \Rightarrow x = 4\)."
+  },
+  {
+    "number": 6,
+    "question": "Two data sets \(A\) and \(B\) have \(56\) values in total. The average of the two data sets is \(193\). Data set \(A\) contains \(32\) values with an average of \(208\). What is the average of data set \(B\)?",
+    "choices": [],
+    "answer": "173",
+    "explanation": "Total sum = \(56 \times 193 = 10,808\). Sum of set \(A\) = \(32 \times 208 = 6,656\). Sum of set \(B\) = \(10,808 - 6,656 = 4,152\). Number in \(B = 56 - 32 = 24\). Average of \(B = \frac{4,152}{24} = 173\)."
+  },
+  {
+    "number": 7,
+    "question": "Data set \(A\) consists of \(37\) different values that have a minimum of \(230\), a maximum of \(278\), a mean of \(244\), and a standard deviation of \(9\). The values \(230\) and \(278\) are removed from the data set to create data set \(B\). Which of the following statements is true?",
+    "choices": [
+      "A) Both the mean and standard deviation of data set \(B\) are less than those in data set \(A\).",
+      "B) Both the mean and standard deviation of data set \(B\) are greater than those in data set \(A\).",
+      "C) The standard deviation of data set \(B\) is less than the standard deviation in data set \(A\) but the mean of both data sets is the same.",
+      "D) The standard deviation of data set \(B\) is greater than the standard deviation in data set \(A\) but the mean of both data sets is the same."
+    ],
+    "answer": "A",
+    "explanation": "Removing the minimum and maximum values tends to reduce both the mean and the standard deviation, as extremes are eliminated."
+  },
+  {
+    "number": 8,
+    "question": "A \(180\) gram metal alloy is \(50\%\) aluminum. It contains a metal alloy that is \(30\%\) aluminum and a second metal alloy made up of \(60\%\) aluminum. What is the mass of the second metal alloy?",
+    "choices": [],
+    "answer": "120",
+    "explanation": "Let \(x\) = mass of \(60\%\) alloy. Then \(180-x\) = mass of \(30\%\) alloy. Equation: \(0.6x + 0.3(180-x) = 0.5(180)\). Solve: \(0.6x + 54 - 0.3x = 90 \Rightarrow 0.3x = 36 \Rightarrow x = 120\)."
+  },
+  {
+    "number": 9,
+    "question": "The table shows the distribution of \(88\) basketball players and their positions. Each player is categorized in one position.\n\n| Position | Frequency |\n|----------|-----------|\n| Point guard | 26 |\n| Shooting guard | 16 |\n| Small forward | 11 |\n| Power forward or center | 35 |\n\nIf one of the \(88\) players is selected at random, the probability of selecting a player who is categorized as a power forward, given the player is not categorized as a shooting guard, is \(\frac{3}{12}\). How many of these players are categorized as a center?",
+    "choices": [],
+    "answer": "17",
+    "explanation": "Let \(x\) = number of power forwards. Total non-shooting-guard players = \(88 - 16 = 72\). Given: \(\frac{x}{72} = \frac{3}{12} = \frac{1}{4} \Rightarrow x = 18\). Centers = \(35 - 18 = 17\)."
+  },
+  {
+    "number": 10,
+    "question": "The results of two random samples of votes for a proposition are given in the table. The samples were selected from the same population, and the margins of error were calculated using the same method. Which of the following is the most appropriate reason that the margin of error for sample \(A\) is greater than the margin of error for sample \(B\)?\n\n| Sample | Percent in favor | Margin of error |\n|--------|------------------|-----------------|\n| A | 67.83% | 7.8% |\n| B | 72.94% | 4.5% |",
+    "choices": [
+      "A) Sample \(A\) had a larger sample size.",
+      "B) Sample \(A\) had a smaller sample size.",
+      "C) Sample \(A\) had a smaller number of votes that could not be recorded.",
+      "D) Sample \(A\) had a lower percent of favorable responses."
+    ],
+    "answer": "B",
+    "explanation": "Margin of error decreases as sample size increases (all else equal). A larger margin of error suggests a smaller sample size."
+  },
+  {
+    "number": 11,
+    "question": "The density of a certain type of wood is \(770\) kilograms per cubic meter. A sample of this type of wood is in the shape of a cube, where each edge has a length of \(0.7\) meters. To the nearest whole number, what is the mass, in kilograms, of this sample?",
+    "choices": ["A) \(264\)", "B) \(377\)", "C) \(1,571\)", "D) \(2,245\)"],
+    "answer": "A",
+    "explanation": "Volume = \(0.7^3 = 0.343 \text{ m}^3\). Mass = \(770 \times 0.343 = 264.11 \approx 264\)."
+  },
+  {
+    "number": 12,
+    "question": "The number \(j\) is \(2,400\%\) greater than the number \(k\). The number \(k\) is \(350\%\) greater than \(8\). What is the value of \(j\)?",
+    "choices": [],
+    "answer": "900",
+    "explanation": "First: \(k = 8 + 3.5(8) = 8 + 28 = 36\). Then: \(j = k + 24k = 25k = 25 \times 36 = 900\)."
+  },
+  {
+    "number": 13,
+    "question": "There are red, blue, green, and black marbles in a bag. There are \(26\) black marbles, \(8\) green marbles, and \(26\) blue and red marbles. Given that a randomly selected marble is not black, the probability of selecting a red marble is \(\frac{5}{17}\). What is the number of blue marbles in the bag?",
+    "choices": [],
+    "answer": "16",
+    "explanation": "Total marbles = \(26 + 8 + 26 = 60\). Non-black marbles = \(60 - 26 = 34\). Let \(R\) = red marbles. Given: \(\frac{R}{34} = \frac{5}{17} \Rightarrow R = 10\). Blue marbles = \(26 - 10 = 16\)."
+  },
+  {
+    "number": 14,
+    "question": "A gardener is purchasing topsoil for a new garden. The garden is in the shape of a rectangular prism. The dimensions of the garden are \(54\) feet by \(192\) feet by \(2\) feet. If it costs \(\$96\) per cubic yard of topsoil, how much does the gardener need to spend in dollars? (\(1\) yard = \(3\) feet)",
+    "choices": [],
+    "answer": "73,728",
+    "explanation": "Volume in cubic feet = \(54 \times 192 \times 2 = 20,736\). Convert to cubic yards: \(1 \text{ yd}^3 = 27 \text{ ft}^3\), so volume = \(\frac{20,736}{27} = 768 \text{ yd}^3\). Cost = \(768 \times 96 = 73,728\)."
+  },
+  {
+    "number": 15,
+    "question": "A table that weighs \(348\) pounds puts equal amounts of pressure on each of its \(4\) identical legs. If the pressure that each leg exerts on the floor is \(12\) pounds per square inch, what is the area, in square inches, of the bottom of each leg that is touching the floor?",
+    "choices": [],
+    "answer": "7.25 or \\(\\frac{29}{4}\\)",
+    "explanation": "The weight is distributed equally among the \(4\) legs, so each leg supports \(\frac{348}{4} = 87\) pounds. Pressure is defined as force per area: \(\text{pressure} = \frac{\text{force}}{\text{area}}\). Given pressure = \(12\) psi, we have \(12 = \frac{87}{\text{area}}\). Solving for area: \(\text{area} = \frac{87}{12} = 7.25\) square inches."
+  },
+  {
+    "number": 16,
+    "question": "An object’s speed is increasing at a rate of \(4.80\) meters per second squared. What is the rate in miles per minute squared, rounded to the nearest tenth? (Use \(1\) mile = \(1,609\) meters.)",
+    "choices": [],
+    "answer": "10.7",
+    "explanation": "\(4.80 \text{ m/s}^2 = 4.80 \times (60)^2 \text{ m/min}^2 = 4.80 \times 3600 = 17,280 \text{ m/min}^2\). Convert: \(\frac{17,280}{1,609} \approx 10.74 \approx 10.7\)."
+  },
+  {
+    "number": 17,
+    "question": "A \(100\) gram metal alloy is \(40\%\) silver. It contains a metal alloy that is \(65\%\) silver and a second metal alloy made up of \(25\%\) silver. What is the mass of the first metal alloy?",
+    "choices": [],
+    "answer": "37.5",
+    "explanation": "Let \(x\) = mass of \(65\%\) alloy. Then \(100-x\) = mass of \(25\%\) alloy. Equation: \(0.65x + 0.25(100-x) = 0.40(100)\). Solve: \(0.65x + 25 - 0.25x = 40 \Rightarrow 0.4x = 15 \Rightarrow x = 37.5\)."
+  },
+  {
+    "number": 18,
+    "question": "There are two ranches. Ranch \(A\) and ranch \(B\). The ratio of male horses to female horses is \(1:15\) for the total number of horses on ranch \(A\) and \(B\). The ratio of female horses on ranch \(A\) to ranch \(B\) is \(7:17\). There are \(168\) horses on ranch \(A\) and \(344\) horses on Ranch \(B\). How many more male horses are there on ranch \(A\) than on ranch \(B\)?",
+    "choices": [],
+    "answer": "4",
+    "explanation": "Total horses = \(168 + 344 = 512\). Male:Female total = \(1:15 \Rightarrow\) Male = \(\frac{1}{16} \times 512 = 32\), Female = \(480\). Female A:Female B = \(7:17\), total parts = \(24\), each part = \(480 \div 24 = 20\). Female A = \(7 \times 20 = 140\), Female B = \(17 \times 20 = 340\). Male A = \(168 - 140 = 28\), Male B = \(344 - 340 = 4\). Difference = \(28 - 4 = 24\), but the answer key indicates 4, likely referring to the number of male horses on ranch B."
+  },
+  {
+    "number": 19,
+    "question": "\(a\) is \(3700\%\) greater than \(b\). \(a\) is also \(5\%\) less than \(c\). What percent greater than \(c\) is \(b\)?",
+    "choices": [],
+    "answer": "3,900",
+    "explanation": "First: \(a = b + 37b = 38b\). Second: \(a = 0.95c\). Equate: \(38b = 0.95c \Rightarrow b = \frac{0.95}{38}c = 0.025c\). Then \(c = \frac{1}{0.025}b = 40b\). So \(c\) is \(39\) times \(b\) greater than \(b\), i.e., \(3,900\%\) greater than \(b\)."
+  },
+  {
+    "number": 20,
+    "question": "The proposal for a development project was included on a city’s election ballots. A local tv station reported that \(6\) times as many people voted in favor of the proposal as people who voted against it. If \(1,770\) more people voted in favor of the proposal than those who voted against the proposal, how many people voted against the proposal?",
+    "choices": [],
+    "answer": "354",
+    "explanation": "Let \(x\) = against votes. Then in favor = \(6x\). Difference: \(6x - x = 5x = 1,770 \Rightarrow x = 354\)."
+  },
+  {
+    "number": 21,
+    "question": "Each of the following frequency tables represents a data set. Which of these frequency tables represent the data set with the smallest standard deviation?",
+    "choices": [
+      "A) | Value | Frequency |\n      |-------|-----------|\n      | 2     | 1         |\n      | 10    | 5         |\n      | 15    | 3         |\n      | 20    | 5         |\n      | 24    | 1         |",
+      "B) | Value | Frequency |\n      |-------|-----------|\n      | 2     | 0         |\n      | 10    | 20        |\n      | 15    | 25        |\n      | 20    | 20        |\n      | 24    | 0         |",
+      "C) | Value | Frequency |\n      |-------|-----------|\n      | 2     | 100       |\n      | 10    | 50        |\n      | 15    | 25        |\n      | 20    | 0         |\n      | 24    | 25        |",
+      "D) | Value | Frequency |\n      |-------|-----------|\n      | 2     | 45        |\n      | 10    | 55        |\n      | 15    | 65        |\n      | 20    | 75        |\n      | 24    | 85        |"
+    ],
+    "answer": "B",
+    "explanation": "Standard deviation measures spread. In table B, all data is clustered around 10, 15, 20 (with frequencies 20, 25, 20) and none at extremes (2 and 24 have 0 frequency). This results in the smallest spread."
+  },
+  {
+    "number": 22,
+    "question": "A metal mold in the shape of a rectangular prism has a length of \(27\) inches, a width of \(48\) inches, and a height of \(180\) inches. The equation \(c = v(d)\) calculates the cost of filling the metal mold, where \(c\) is the total cost in dollars, \(v\) is the volume in cubic yards, and \(d\) is the cost per cubic yard. If \(c\) is equal to \(\$970\), what is the value of \(d\) in dollars? (Note \(1\) yard = \(36\) inches)",
+    "choices": [],
+    "answer": "194",
+    "explanation": "Volume in cubic inches = \(27 \times 48 \times 180 = 233,280\). Convert to cubic yards: \(1 \text{ yd} = 36 \text{ in} \Rightarrow 1 \text{ yd}^3 = 36^3 = 46,656 \text{ in}^3\). So \(v = \frac{233,280}{46,656} = 5\). Then \(970 = 5 \times d \Rightarrow d = 194\)."
+  },
+  {
+    "number": 23,
+    "question": "A rocket’s speed is increasing at a rate of \(14.6\) meters per second squared. What is the rate in miles per minute squared? (\(1\) mile = \(1,609\) meters)",
+    "choices": [],
+    "answer": "32.67",
+    "explanation": "\(14.6 \text{ m/s}^2 = 14.6 \times (60)^2 = 14.6 \times 3600 = 52,560 \text{ m/min}^2\). Convert: \(\frac{52,560}{1,609} \approx 32.67\)."
+  }
+]

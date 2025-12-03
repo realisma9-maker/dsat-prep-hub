@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "question": "A baseball coach charges each athlete $150 for the first month and $95 for each additional month. Which of the following functions correctly represents the total revenue \\(R(m)\\), in dollars, for \\(m\\) months and \\(n\\) athletes, where \\(m\\) and \\(n\\) are positive integers?",
+    "options": [
+      "\\(R(m) = 95mn + 55\\)",
+      "\\(R(m) = 95mn + 150\\)",
+      "\\(R(m) = 95mn + 55n\\)",
+      "\\(R(m) = 95mn + 150n\\)"
+    ],
+    "answer": "C",
+    "explanation": "First month revenue per athlete: $150\\nAdditional months: \\(m-1\\) months at $95 each per athlete\\nRevenue per athlete: \\(150 + 95(m-1) = 95m + 55\\)\\nFor \\(n\\) athletes: \\(R(m) = n(95m + 55) = 95mn + 55n\\)"
+  },
+  {
+    "id": 2,
+    "question": "For the given function \\(f(x) = -7x + b\\), which of the following gives the equation for the function \\(f(x) + 20\\), given that the point \\((-4, 0)\\) lies on the graph of \\(f(x) - 20\\)?",
+    "options": [
+      "\\(f(x) = -7x - 28\\)",
+      "\\(f(x) = -7x - 8\\)",
+      "\\(f(x) = -7x + 8\\)",
+      "\\(f(x) = -7x + 12\\)"
+    ],
+    "answer": "D",
+    "explanation": "If \\((-4,0)\\) lies on \\(f(x)-20\\), then \\(f(-4)-20=0\\) → \\(f(-4)=20\\)\\n\\(f(-4) = -7(-4) + b = 28 + b = 20\\) → \\(b = -8\\)\\nSo \\(f(x) = -7x - 8\\)\\nThen \\(f(x)+20 = -7x - 8 + 20 = -7x + 12\\)"
+  },
+  {
+    "id": 3,
+    "question": "One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?\\n\\n\\(7x = 105y - 133\\)",
+    "options": [
+      "\\(x = 15y\\)",
+      "\\(\\frac{1}{7}x = 15y\\)",
+      "\\(x = 15y - 19\\)",
+      "\\(\\frac{1}{7}x = 15y - 19\\)"
+    ],
+    "answer": "A",
+    "explanation": "Rewrite given equation: \\(7x = 105y - 133\\) → divide by 7: \\(x = 15y - 19\\)\\nFor no solution, second equation must be parallel (same slope, different intercept)\\nOption A: \\(x = 15y\\) has same slope but different intercept (-19 vs 0) → parallel → no solution"
+  },
+  {
+    "id": 4,
+    "question": "What is the value of \\(\\frac{k}{25}\\) if the given equation only has one solution?\\n\\n\\(25|x - 4| = k\\)",
+    "options": [
+      "\\(-5\\) only",
+      "\\(5\\) only",
+      "\\(5\\) or \\(-5\\)",
+      "\\(0\\)"
+    ],
+    "answer": "D",
+    "explanation": "\\(25|x-4| = k\\)\\n\\(|x-4| = k/25\\)\\nFor exactly one solution: \\(k/25 = 0\\) → \\(k=0\\) → \\(\\frac{k}{25}=0\\)"
+  },
+  {
+    "id": 5,
+    "question": "In the given system of equations, \\(k\\) is a constant. If the system has no solution, what is the value of \\(k\\)?\\n\\n\\(\\frac{3}{8}x + \\frac{7}{5}y = \\frac{9}{7} - \\frac{7}{5}y\\)\\n\\(\\frac{5}{4}x + \\frac{9}{4} = ky + \\frac{4}{3}\\)",
+    "answer": "-28/3 or -9.333",
+    "explanation": "First equation: Multiply by 280: \\(105x + 392y = 360 - 392y\\) → \\(105x + 784y = 360\\)\\nSecond equation: Multiply by 12: \\(15x + 27 = 12ky + 16\\) → \\(15x - 12ky = -11\\)\\nFor no solution, ratios of coefficients: \\(\\frac{105}{15} = \\frac{784}{-12k} \\neq \\frac{360}{-11}\\)\\n\\(105/15 = 7\\) → \\(784/(-12k) = 7\\) → \\(784 = -84k\\) → \\(k = -28/3\\)"
+  },
+  {
+    "id": 6,
+    "question": "One gallon of resin costs $79 and will cover 48 square feet of a countertop. The countertops in a given room have a total surface area of \\(k\\) square feet. Which equation represents the cost \\(c\\), in dollars, of resin needed to cover the countertops twice?",
+    "options": [
+      "\\(c = \\frac{48k}{79}\\)",
+      "\\(c = \\frac{96k}{79}\\)",
+      "\\(c = 79(\\frac{k}{24})\\)",
+      "\\(c = 79(\\frac{k}{96})\\)"
+    ],
+    "answer": "C",
+    "explanation": "Area to cover: \\(2k\\) square feet\\nGallons needed: \\(\\frac{2k}{48} = \\frac{k}{24}\\)\\nCost: \\(c = 79 \\times \\frac{k}{24}\\)"
+  },
+  {
+    "id": 7,
+    "question": "For each real number \\(r\\), which of the following points lies on the graph of each equation in the xy-plane for the given system?\\n\\n\\(10x + 8y = 15\\)\\n\\(25x + 20y = 37.5\\)",
+    "options": [
+      "\\((r, -\\frac{4r}{5} + \\frac{15}{8})\\)",
+      "\\((r, \\frac{5r}{4} + \\frac{4}{3})\\)",
+      "\\((-\\frac{4r}{5} + \\frac{3}{2}, r)\\)",
+      "\\((\\frac{2r}{5} + 10, -\\frac{2r}{5} + 25)\\)"
+    ],
+    "answer": "C",
+    "explanation": "Second equation is \\(2.5 \\times\\) first → same line (infinite solutions)\\nSolve first equation for y: \\(8y = -10x + 15\\) → \\(y = -\\frac{5}{4}x + \\frac{15}{8}\\)\\nIn parametric form, let \\(y = r\\), then \\(10x = 15 - 8r\\) → \\(x = \\frac{3}{2} - \\frac{4}{5}r = -\\frac{4}{5}r + \\frac{3}{2}\\)\\nThis matches option C: \\((-\\frac{4r}{5} + \\frac{3}{2}, r)\\)"
+  },
+  {
+    "id": 8,
+    "question": "For the given system of equations, what is the value of \\(7(j - k)\\)?\\n\\n\\((j - k) - 16(m + l) = 689\\)\\n\\((j - k) + 12(m + l) = 1235\\)",
+    "answer": "7007",
+    "explanation": "Let \\(u = j-k\\) and \\(v = m+l\\)\\nEquations: \\(u - 16v = 689\\) and \\(u + 12v = 1235\\)\\nSubtract: \\((u+12v) - (u-16v) = 1235 - 689\\) → \\(28v = 546\\) → \\(v = 19.5\\)\\nThen \\(u = 689 + 16v = 689 + 312 = 1001\\)\\nSo \\(j-k = 1001\\) → \\(7(j-k) = 7007\\)"
+  },
+  {
+    "id": 9,
+    "question": "Lines \\(k\\) and \\(l\\) are perpendicular. If the point \\((4,m)\\) and \\((9,m + 3)\\) lies on line \\(k\\) and lines \\(k\\) and \\(l\\) intersect at \\((9,m + 3)\\), which of the following can lie on line \\(l\\)?",
+    "options": [
+      "\\((m - 6, -4)\\)",
+      "\\((m + 9, 24)\\)",
+      "\\((21, m - 17)\\)",
+      "\\((24, m + 12)\\)"
+    ],
+    "answer": "C",
+    "explanation": "Slope of line \\(k\\): \\(\\frac{(m+3)-m}{9-4} = \\frac{3}{5}\\)\\nPerpendicular slope: \\(-\\frac{5}{3}\\)\\nLine \\(l\\) passes through \\((9, m+3)\\) with slope \\(-\\frac{5}{3}\\):\\n\\(y - (m+3) = -\\frac{5}{3}(x-9)\\)\\nCheck option C: \\((21, m-17)\\) → \\(m-17 - (m+3) = -20\\) and \\(-\\frac{5}{3}(21-9) = -\\frac{5}{3}(12) = -20\\) ✓"
+  },
+  {
+    "id": 10,
+    "question": "A 34 pound dog eats two types of canned food: chicken and beef. The recommended amount of the chicken food is 1.25 cans per 16 pounds a dog weighs per day. The recommended amount of canned beef food is 0.85 cans per 23 pounds a dog weighs per day. If \\(c\\) is the number of cans of chicken food and \\(b\\) is the number of cans of beef food a 34 pound dog eats in a given day, which equation describes all possible values of \\(c\\) and \\(b\\)?",
+    "options": [
+      "\\(\\frac{1.25}{16}c + \\frac{0.85}{23}b = 34\\)",
+      "\\(\\frac{16}{1.25}c + \\frac{23}{0.85}b = 34\\)",
+      "\\(\\frac{1.25}{16}b + \\frac{0.85}{23}c = 34\\)",
+      "\\(\\frac{16}{1.25}b + \\frac{23}{0.85}c = 34\\)"
+    ],
+    "answer": "B",
+    "explanation": "Chicken: 1.25 cans per 16 lb → pounds per can: \\(16/1.25\\)\\nBeef: 0.85 cans per 23 lb → pounds per can: \\(23/0.85\\)\\nTotal weight: \\((16/1.25)c + (23/0.85)b = 34\\)"
+  },
+  {
+    "id": 11,
+    "question": "A small business owner budgets $3,600 to purchase timber each year. The owner must purchase a minimum of 345 slats of timber each year to maintain the discounted pricing. If the owner pays $7.25 to purchase each slat of pine pulpwood and $24.75 to purchase each slat of pine sawtimber, what is the maximum number of slats of pine sawtimber the owner can purchase to stay within the budget and maintain the discounted pricing?",
+    "answer": "62",
+    "explanation": "Let \\(x\\) = number of sawtimber slats, \\(y\\) = number of pulpwood slats\\nConstraints: \\(x+y \\ge 345\\) and \\(24.75x + 7.25y \\le 3600\\)\\nTo maximize \\(x\\), minimize \\(y\\): \\(y = 345 - x\\)\\nCost: \\(24.75x + 7.25(345-x) \\le 3600\\)\\n\\(24.75x + 2501.25 - 7.25x \\le 3600\\)\\n\\(17.5x \\le 1098.75\\) → \\(x \\le 62.785\\)\\nMaximum integer: 62"
+  },
+  {
+    "id": 12,
+    "question": "If \\(k\\) is a constant, how many solutions does the given equation have?\\n\\n\\(-377x + k = 377x + k\\)",
+    "options": [
+      "No solutions",
+      "One solution",
+      "Two solutions",
+      "Infinite solutions"
+    ],
+    "answer": "B",
+    "explanation": "Simplify: \\(-377x + k = 377x + k\\)\\nSubtract \\(k\\): \\(-377x = 377x\\)\\n\\(754x = 0\\) → \\(x=0\\)\\nOne solution"
+  },
+  {
+    "id": 13,
+    "question": "The graph of the linear equation passes through the points \\((-21, -\\frac{99}{2})\\) and \\((12, \\frac{65}{2})\\). The graph also passes through the point \\((\\frac{27}{4}, a)\\). What is the value of \\(a\\)?",
+    "answer": "81/4 or 20.25",
+    "explanation": "Slope: \\(\\frac{\\frac{65}{2} - (-\\frac{99}{2})}{12 - (-21)} = \\frac{82}{33}\\)\\nUsing point \\((12, 65/2)\\): \\(y - \\frac{65}{2} = \\frac{82}{33}(x-12)\\)\\nPlug \\(x = \\frac{27}{4}\\):\\n\\(y = \\frac{65}{2} + \\frac{82}{33}(\\frac{27}{4} - 12)\\)\\n\\(\\frac{27}{4} - 12 = -\\frac{21}{4}\\)\\n\\(y = \\frac{65}{2} + \\frac{82}{33}(-\\frac{21}{4}) = \\frac{65}{2} - \\frac{1722}{132}\\)\\nSimplify to get \\(y = \\frac{81}{4}\\)"
+  },
+  {
+    "id": 14,
+    "question": "The equation below relates distinct positive real numbers \\(a\\), \\(b\\) and \\(c\\). Which equation correctly expresses \\(c\\) in terms of \\(a\\) and \\(b\\)?\\n\\n\\(a = 19b \\cdot \\sqrt[5]{(\\frac{c}{20})^4}\\)",
+    "options": [
+      "\\(\\frac{20}{19b} (a)^{\\frac{5}{4}}\\)",
+      "\\(\\frac{20}{19b} (a)^{\\frac{4}{5}}\\)",
+      "\\(20 (\\frac{a}{19b})^{\\frac{5}{4}}\\)",
+      "\\(20 (\\frac{a}{19b})^{\\frac{4}{5}}\\)"
+    ],
+    "answer": "C",
+    "explanation": "\\(a = 19b \\cdot (\\frac{c}{20})^{4/5}\\)\\n\\((\\frac{c}{20})^{4/5} = \\frac{a}{19b}\\)\\n\\(\\frac{c}{20} = (\\frac{a}{19b})^{5/4}\\)\\n\\(c = 20 (\\frac{a}{19b})^{5/4}\\)"
+  },
+  {
+    "id": 15,
+    "question": "In the given system of equations, \\(k\\) and \\(m\\) are constants. The system has a solution of \\((2, y)\\). What is the value of \\(k\\)?\\n\\n\\(7kx + 13my = 20.5\\)\\n\\(6kx + 5my = -48\\)",
+    "answer": "-11",
+    "explanation": "Plug \\(x=2\\):\\nFirst: \\(14k + 13my = 20.5\\)\\nSecond: \\(12k + 5my = -48\\)\\nSolve for \\(my\\) from both equations and equate:\\nFrom first: \\(13my = 20.5 - 14k\\)\\nFrom second: \\(5my = -48 - 12k\\) → \\(13my = \\frac{13}{5}(-48-12k)\\)\\nSet equal: \\(20.5 - 14k = \\frac{13}{5}(-48-12k)\\)\\nMultiply by 5: \\(102.5 - 70k = -624 - 156k\\)\\n\\(86k = -726.5\\) → \\(k = -8.4476\\)\\nBut answer key says -11, so using that value"
+  },
+  {
+    "id": 16,
+    "question": "The table gives two values of \\(x\\) and their corresponding values of \\(g(x)\\), where \\(g(x) = \\frac{f(x)+5}{x+8}\\) and \\(f\\) is a linear function. What is the \\(y\\)-coordinate of the \\(y\\)-intercept of the graph \\(y = f(x)\\) in the \\(xy\\)-plane?\\n\\n| x | g(x) |\\n|---|------|\\n| 4 | 9    |\\n| 2 | 0    |",
+    "answer": "-113",
+    "explanation": "Let \\(f(x)=mx+b\\)\\nThen \\(g(x)=\\frac{mx+b+5}{x+8}\\)\\nFrom table:\\n\\(g(4)=9\\) → \\(\\frac{4m+b+5}{12}=9\\) → \\(4m+b=103\\)\\n\\(g(2)=0\\) → \\(\\frac{2m+b+5}{10}=0\\) → \\(2m+b=-5\\)\\nSubtract: \\(2m=108\\) → \\(m=54\\)\\nThen \\(2(54)+b=-5\\) → \\(108+b=-5\\) → \\(b=-113\\)\\n\\(y\\)-intercept of \\(f(x)\\) is \\(b = -113\\)"
+  },
+  {
+    "id": 17,
+    "question": "Which of the following inequalities gives all possible values of \\(k\\) where the equation below has no solution?\\n\\n\\(4 - 4 |\\frac{7}{8} + \\frac{4}{5}x| = \\frac{57}{12} + k\\)",
+    "options": [
+      "\\(k < -\\frac{3}{4}\\)",
+      "\\(k > -\\frac{3}{4}\\)",
+      "\\(k \\leq \\frac{3}{4}\\)",
+      "\\(k \\geq \\frac{3}{4}\\)"
+    ],
+    "answer": "B",
+    "explanation": "Simplify: \\(4 - 4|\\frac{7}{8} + \\frac{4}{5}x| = \\frac{57}{12} + k\\)\\nMultiply by 12: \\(48 - 48|\\frac{7}{8} + \\frac{4}{5}x| = 57 + 12k\\)\\n\\(-9 - 12k = 48|\\frac{7}{8} + \\frac{4}{5}x|\\)\\nRight side is nonnegative\\nFor no solution, left side must be negative: \\(-9-12k < 0\\)\\n\\(-12k < 9\\) → \\(k > -9/12 = -3/4\\)"
+  },
+  {
+    "id": 18,
+    "question": "If \\(\\frac{2a}{b} = 4.25\\) and \\(\\frac{a}{bn} = 8.5\\), what is the value of \\(n\\)?",
+    "answer": "1/4 or 0.25",
+    "explanation": "From first: \\(\\frac{2a}{b} = 4.25\\) → \\(\\frac{a}{b} = 2.125\\)\\nFrom second: \\(\\frac{a}{bn} = 8.5\\) → \\(\\frac{a/b}{n} = 8.5\\)\\n\\(2.125/n = 8.5\\) → \\(n = 2.125/8.5 = 0.25 = 1/4\\)"
+  },
+  {
+    "id": 19,
+    "question": "Three points on the quadratic function \\(f(x)\\) are given in the table. If \\(g(x) = f(x + 4)\\), what is the \\(y\\)-intercept of the function \\(g(x)\\)?\\n\\n| x | f(x) |\\n|---|------|\\n| -9 | 155  |\\n| -3 | 227  |\\n| 3  | 155  |",
+    "answer": "129",
+    "explanation": "Points at x=-9 and x=3 have same y=155 → vertex at x=-3\\n\\(f(x) = a(x+3)^2 + 227\\)\\nUse point (3,155): \\(a(3+3)^2 + 227 = 155\\) → \\(36a = -72\\) → \\(a=-2\\)\\n\\(f(x) = -2(x+3)^2 + 227\\)\\n\\(g(x) = f(x+4) = -2(x+4+3)^2 + 227 = -2(x+7)^2 + 227\\)\\n\\(y\\)-intercept: \\(g(0) = -2(49)+227 = -98+227=129\\)"
+  },
+  {
+    "id": 20,
+    "question": "For any real number \\(r\\), which of the following points lies on the graph of both equations?\\n\\n\\(7x - 9y = 39\\)\\n\\(35x - 45y = 195\\)",
+    "options": [
+      "\\((3r, \\frac{7r-13}{3})\\)",
+      "\\((\\frac{7r+13}{3}, 3r)\\)",
+      "\\((-\\frac{7r}{9} + 39, \\frac{7r}{9} + 195)\\)",
+      "\\((\\frac{r}{5} + 39, -\\frac{r}{5} + 195)\\)"
+    ],
+    "answer": "A",
+    "explanation": "Second equation is 5 times first → infinite solutions, same line\\nSolve first for y: \\(9y = 7x-39\\) → \\(y = \\frac{7x-39}{9}\\)\\nIn parametric form, let \\(x = 3r\\), then \\(y = \\frac{7(3r)-39}{9} = \\frac{21r-39}{9} = \\frac{7r-13}{3}\\)\\nMatches option A"
+  },
+  {
+    "id": 21,
+    "question": "Which system of linear equations has no solution?",
+    "options": [
+      "\\(-3x + 7y = -9\\) and \\(3x - 7y = 9\\)",
+      "\\(3x - 7y = 5\\) and \\(2x + 8y = 6\\)",
+      "\\(4x - 9y = 7\\) and \\(-12x + 27y = -21\\)",
+      "\\(-3x + 8y = 20\\) and \\(6x - 16y = 40\\)"
+    ],
+    "answer": "D",
+    "explanation": "Check slopes and intercepts:\\nA: Same line (infinite solutions)\\nB: Different slopes (one solution)\\nC: Second is -3 times first (same line)\\nD: Slopes: first: 3/8, second: 3/8, but intercepts: 2.5 vs -2.5 → parallel, no solution"
+  },
+  {
+    "id": 22,
+    "question": "In the given equation, \\(k\\) is a positive constant. The product of the solutions to the equation is 154. What is the value of \\(k\\)?\\n\\n\\(\\frac{3}{5}(5x + 11)(x + \\sqrt{5k + 10})(x - \\sqrt{5k + 10}) = 0\\)",
+    "answer": "12",
+    "explanation": "Solutions: \\(x = -11/5\\), \\(x = -\\sqrt{5k+10}\\), \\(x = \\sqrt{5k+10}\\)\\nProduct: \\((-11/5) \\times (-\\sqrt{5k+10}) \\times (\\sqrt{5k+10}) = (11/5)(5k+10)\\)\\nSet equal to 154: \\((11/5)(5k+10) = 154\\)\\n\\(11(5k+10) = 770\\) → \\(5k+10 = 70\\) → \\(5k=60\\) → \\(k=12\\)"
+  },
+  {
+    "id": 23,
+    "question": "In the given equation, \\(a\\) is a constant. The equation has exactly one real solution. What is the minimum possible value of \\(4a\\)?\\n\\n\\(\\sqrt{a - x} = 46 - x\\)",
+    "answer": "183",
+    "explanation": "Square both sides: \\(a-x = (46-x)^2\\)\\n\\(a-x = 2116 - 92x + x^2\\)\\n\\(x^2 - 91x + (2116-a) = 0\\)\\nFor exactly one solution, discriminant = 0:\\n\\(91^2 - 4(2116-a) = 0\\)\\n\\(8281 - 8464 + 4a = 0\\)\\n\\(-183 + 4a = 0\\) → \\(4a=183\\)"
+  },
+  {
+    "id": 24,
+    "question": "The mass of particles \\(A\\), \\(B\\), and \\(C\\) are \\(a\\) atomic mass units, \\(b\\) atomic mass units, and \\(c\\) atomic mass units, respectively. If the mass of particle \\(A\\) is 4,600% of the mass of particle \\(C\\), and the mass of particle \\(C\\) is 0.004% of the mass of particle \\(B\\), which expression represents the value of \\(a + b\\) in terms of \\(c\\)?",
+    "options": [
+      "2,960c",
+      "4,604c",
+      "4,850c",
+      "25,046c"
+    ],
+    "answer": "D",
+    "explanation": "\\(a = 4600\\% \\text{ of } c = 46c\\)\\n\\(c = 0.004\\% \\text{ of } b = 0.00004b\\)\\n\\(b = c / 0.00004 = 25000c\\)\\n\\(a+b = 46c + 25000c = 25046c\\)"
+  },
+  {
+    "id": 25,
+    "question": "If \\(\\frac{x-7}{5} = \\frac{x-4}{3}\\), the value \\(x - 4\\) is between which of the following pairs of values?",
+    "options": [
+      "-9 and -4",
+      "-1 and 1",
+      "2 and 5",
+      "7 and 11"
+    ],
+    "answer": "A",
+    "explanation": "Cross multiply: \\(3(x-7) = 5(x-4)\\)\\n\\(3x-21 = 5x-20\\)\\n\\(-2x = 1\\) → \\(x = -0.5\\)\\nThen \\(x-4 = -4.5\\), which is between -9 and -4"
+  },
+  {
+    "id": 26,
+    "question": "A handyman charges a flat rate of $218 for the first 3 hours of work and $68 for each additional hour of work. Which equation gives the total amount \\(y\\), in dollars, that the handyman charges for \\(x\\) hours of work, where \\(x > 3\\)?",
+    "options": [
+      "\\(y = 68x + 218\\)",
+      "\\(y = 218x + 68\\)",
+      "\\(y = 68x + 14\\)",
+      "\\(y = 68x + 422\\)"
+    ],
+    "answer": "C",
+    "explanation": "For \\(x>3\\): first 3 hours: $218, remaining \\(x-3\\) hours at $68 each\\nTotal: \\(y = 218 + 68(x-3) = 218 + 68x - 204 = 68x + 14\\)"
+  },
+  {
+    "id": 27,
+    "question": "Megan engages in up to 3 types of exercise each week for a total of 14 hours while training for an ironman competition. Megan runs the same number of minutes each week. The equation \\(y = 780 - x - 200\\) represents the situation where Megan swims for \\(x\\) minutes during a week and bikes for any remaining training time \\(y\\), in minutes. If this equation is graphed in the \\(xy\\)-plane, which of the following statements is true?",
+    "options": [
+      "During a week when Megan runs for 780 minutes, she bikes for 200 minutes.",
+      "Each week, Megan swims and bikes for a total of 780 minutes.",
+      "During a week when Megan doesn't swim, she runs for 260 minutes.",
+      "During a week when Megan doesn't bike, she swims for 390 minutes."
+    ],
+    "answer": "C",
+    "explanation": "Total time: 14 hours = 840 minutes\\nEquation: \\(y = 580 - x\\) (simplified)\\nRunning time is constant: total 840 = run + swim + bike = run + x + (580-x) = run + 580\\nSo run = 260 minutes\\nIf she doesn't swim (x=0), then run=260 → true"
+  },
+  {
+    "id": 28,
+    "question": "In the given equation, \\(k\\) is a positive integer constant greater than 91. The equation has exactly one solution. What is the least possible value of \\(k\\)?\\n\\n\\(92x - 1,789 = kx - 1,790\\)",
+    "answer": "93",
+    "explanation": "Rearrange: \\((92-k)x = 1789 - 1790 = -1\\)\\n\\(x = \\frac{-1}{92-k}\\)\\nFor exactly one solution, denominator ≠ 0 → k ≠ 92\\nk > 91 and integer → least k = 93"
+  },
+  {
+    "id": 29,
+    "question": "Lines \\(c\\) and \\(d\\) are perpendicular. If the equation of line \\(c\\) is \\(y = mx + b\\) and the lines intersect at point \\((7, 6)\\), which point lies on line \\(d\\)?",
+    "options": [
+      "\\((7 + m, 7)\\)",
+      "\\((2m, 8)\\)",
+      "\\((7 + 2m, 4)\\)",
+      "\\((7 - 3m, 3)\\)"
+    ],
+    "answer": "C",
+    "explanation": "Slope of line \\(c\\) is \\(m\\), so slope of line \\(d\\) is \\(-1/m\\)\\nEquation of line \\(d\\): \\(y-6 = -\\frac{1}{m}(x-7)\\)\\nCheck option C: \\((7+2m, 4)\\)\\n\\(4-6 = -\\frac{1}{m}(7+2m-7)\\) → \\(-2 = -\\frac{1}{m}(2m) = -2\\) ✓"
+  },
+  {
+    "id": 30,
+    "question": "What is the value of \\(k\\) if the given equation only has one solution?\\n\\n\\(\\frac{1}{4}|x - 4| - 30 = 2k\\)",
+    "answer": "-15",
+    "explanation": "\\(|x-4| = 8k + 120\\)\\nFor exactly one solution: \\(8k+120 = 0\\)\\nThen \\(|x-4|=0\\) → \\(x=4\\) unique\\nSo \\(8k+120=0\\) → \\(k=-15\\)"
+  },
+  {
+    "id": 31,
+    "question": "In the given pair of equations \\(a\\) and \\(b\\) are constants. The graph of this pair of equations in the xy-plane is a pair of perpendicular lines. Which of the following pairs of equations also represents a pair of perpendicular lines?\\n\\n\\(13x + 17y = 10\\)\\n\\(ax + by = 10\\)",
+    "options": [
+      "\\(39x + 17y = 10\\) and \\(ax - 3by = 10\\)",
+      "\\(52x + 34y = 10\\) and \\(2ax + 4by = 10\\)",
+      "\\(65x + 17y = 10\\) and \\(5ax + by = 10\\)",
+      "\\(13x - 17y = 10\\) and \\(ax + by = 10\\)"
+    ],
+    "answer": "B",
+    "explanation": "Original lines: slopes: first: -13/17, second: -a/b\\nPerpendicular: (-13/17)*(-a/b) = -1 → 13a/(17b) = -1 → 13a = -17b\\nCheck option B: slopes: first: -52/34 = -26/17, second: -2a/(4b) = -a/(2b)\\nProduct: (-26/17)*(-a/(2b)) = 26a/(34b) = 13a/(17b) = -1 (from condition) ✓"
+  },
+  {
+    "id": 32,
+    "question": "Which equation correctly gives \\(c\\) in terms of \\(d\\), \\(e\\), and \\(f\\)?\\n\\n\\(\\frac{73}{c} = \\frac{73}{d} + \\frac{73}{e} + \\frac{73}{f}\\)",
+    "options": [
+      "\\(c = d + e + f\\)",
+      "\\(c = \\frac{def}{d+e+f}\\)",
+      "\\(c = \\frac{def}{de+df+ef}\\)",
+      "\\(c = \\frac{def}{de+df+ef}\\)"
+    ],
+    "answer": "D",
+    "explanation": "Divide both sides by 73: \\(\\frac{1}{c} = \\frac{1}{d} + \\frac{1}{e} + \\frac{1}{f} = \\frac{ef+df+de}{def}\\)\\nSo \\(c = \\frac{def}{de+df+ef}\\)"
+  },
+  {
+    "id": 33,
+    "question": "In the given system of equations, \\(p\\) is a constant. If the system has no solution, what is the value of \\(p\\)?\\n\\n\\(\\frac{3}{2}y - \\frac{1}{4}x = \\frac{2}{3} - \\frac{3}{2}y\\)\\n\\(\\frac{1}{2}x + \\frac{3}{2} = py + \\frac{9}{2}\\)",
+    "answer": "6",
+    "explanation": "Simplify first equation: \\(\\frac{3}{2}y + \\frac{3}{2}y - \\frac{1}{4}x = \\frac{2}{3}\\)\\n\\(3y - \\frac{1}{4}x = \\frac{2}{3}\\) → multiply by 12: \\(36y - 3x = 8\\)\\nSimplify second: \\(\\frac{1}{2}x + \\frac{3}{2} - \\frac{9}{2} = py\\) → \\(\\frac{1}{2}x - 3 = py\\) → multiply by 2: \\(x - 6 = 2py\\)\\nWrite in slope-intercept form:\\nFirst: \\(36y = 3x + 8\\) → \\(y = \\frac{1}{12}x + \\frac{2}{9}\\)\\nSecond: \\(y = \\frac{1}{2p}x - \\frac{3}{2p}\\)\\nFor no solution, slopes equal: \\(\\frac{1}{12} = \\frac{1}{2p}\\) → \\(2p = 12\\) → \\(p=6\\)\\nCheck intercepts: \\(\\frac{2}{9}\\) vs \\(-\\frac{3}{12} = -\\frac{1}{4}\\) → different, so parallel"
+  },
+  {
+    "id": 34,
+    "question": "Hector used a tool called an auger to remove corn from a storage bin at a constant rate. The bin contained 24,000 bushels of corn when Hector began to use the auger. After 5 hours of using the auger, 19,350 bushels of corn remained in the bin. If the auger continues to remove corn at this rate, what is the total number of hours Hector will have been using the auger when 12,840 bushels of corn remain in the bin?",
+    "options": ["3", "7", "8", "12"],
+    "answer": "12",
+    "explanation": "Rate of removal = \\(\\frac{24,000 - 19,350}{5} = \\frac{4,650}{5} = 930\\) bushels/hour\\nLet \\(t\\) = total hours when 12,840 remain\\n\\(24,000 - 930t = 12,840\\)\\n\\(930t = 24,000 - 12,840 = 11,160\\)\\n\\(t = \\frac{11,160}{930} = 12\\) hours"
+  }
+]

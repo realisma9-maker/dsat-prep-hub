@@ -1,88 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 100% 39%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 100% 39%;
 
     --radius: 0.5rem;
 
+    /* Custom tokens */
+    --sat-blue: 217 100% 39%;
+    --sat-blue-light: 217 91% 95%;
+    --sat-blue-hover: 217 100% 45%;
+    --selection-bg: 217 91% 93%;
+    --timer-warning: 38 92% 50%;
+    --timer-danger: 0 84% 60%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 6%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    --sat-blue: 217 91% 60%;
+    --sat-blue-light: 217 91% 15%;
+    --sat-blue-hover: 217 91% 70%;
+    --selection-bg: 217 91% 20%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +107,129 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* MathJax styling */
+  .MathJax {
+    @apply text-foreground;
+  }
+}
+
+@layer components {
+  .question-card {
+    @apply bg-card rounded-lg shadow-md border border-border p-6 transition-all duration-200;
+  }
+
+  .option-button {
+    @apply w-full text-left px-4 py-3 rounded-lg border-2 border-border bg-card 
+           hover:border-primary/50 hover:bg-sat-blue-light transition-all duration-180
+           flex items-start gap-3 cursor-pointer;
+  }
+
+  .option-button.selected {
+    @apply border-primary bg-selection-bg;
+  }
+
+  .option-letter {
+    @apply w-8 h-8 rounded-full border-2 border-current flex items-center justify-center 
+           font-semibold text-sm shrink-0;
+  }
+
+  .option-button.selected .option-letter {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  .nav-button {
+    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-180 
+           hover:scale-[1.02] active:scale-[0.98] shadow-sm;
+  }
+
+  .topic-tile {
+    @apply bg-card rounded-xl shadow-lg border border-border p-8 
+           hover:shadow-xl hover:scale-[1.02] hover:border-primary/30
+           transition-all duration-300 cursor-pointer;
+  }
+
+  .panel-collapsible {
+    @apply bg-card rounded-lg border border-border overflow-hidden 
+           transition-all duration-300;
+  }
+
+  .timer-display {
+    @apply font-mono text-lg font-semibold tabular-nums;
+  }
+
+  .timer-warning {
+    @apply text-timer-warning;
+  }
+
+  .timer-danger {
+    @apply text-timer-danger animate-pulse;
+  }
+}
+
+@layer utilities {
+  .bg-sat-blue-light {
+    background-color: hsl(var(--sat-blue-light));
+  }
+
+  .bg-selection-bg {
+    background-color: hsl(var(--selection-bg));
+  }
+
+  .text-timer-warning {
+    color: hsl(var(--timer-warning));
+  }
+
+  .text-timer-danger {
+    color: hsl(var(--timer-danger));
+  }
+
+  .duration-180 {
+    transition-duration: 180ms;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  .animate-slide-out {
+    animation: slideOut 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
