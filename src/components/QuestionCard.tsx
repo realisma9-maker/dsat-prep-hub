@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Question } from '@/types/question';
 import { Input } from '@/components/ui/input';
-import { Bookmark, Flag } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Bookmark, Flag, CheckCircle, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface QuestionCardProps {
@@ -25,6 +26,12 @@ export function QuestionCard({
 }: QuestionCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [isChecked, setIsChecked] = useState(false);
+
+  // Reset checked state when question changes
+  useEffect(() => {
+    setIsChecked(false);
+  }, [question.id]);
 
   // Focus input for free response
   useEffect(() => {
@@ -38,7 +45,15 @@ export function QuestionCard({
     if (window.MathJax) {
       window.MathJax.typesetPromise?.([cardRef.current]);
     }
-  }, [question]);
+  }, [question, isChecked]);
+
+  const isCorrect = selectedAnswer?.toUpperCase().trim() === question.answer?.toUpperCase().trim();
+
+  const handleCheckAnswer = () => {
+    if (selectedAnswer) {
+      setIsChecked(true);
+    }
+  };
 
   const animationClass = animationDirection === 'right' 
     ? 'animate-slide-in-right' 
@@ -90,25 +105,38 @@ export function QuestionCard({
             {question.options.map((option, index) => {
               const letter = String.fromCharCode(65 + index);
               const isSelected = selectedAnswer === letter;
+              const isCorrectOption = letter === question.answer?.toUpperCase().trim();
+              const showCorrectFeedback = isChecked && isCorrectOption;
+              const showIncorrectFeedback = isChecked && isSelected && !isCorrectOption;
               
               return (
                 <div key={index} className="flex items-center gap-4">
                   <button
-                    onClick={() => onAnswerSelect(letter)}
+                    onClick={() => !isChecked && onAnswerSelect(letter)}
+                    disabled={isChecked}
                     className={cn(
                       "flex-1 flex items-center gap-4 px-5 py-4 rounded-xl border-2 transition-all duration-180 text-left",
-                      isSelected 
+                      showCorrectFeedback
+                        ? "border-green-500 bg-green-500/10"
+                        : showIncorrectFeedback
+                        ? "border-destructive bg-destructive/10"
+                        : isSelected 
                         ? "border-primary bg-primary/5" 
-                        : "border-border hover:border-primary/40 hover:bg-muted/30"
+                        : "border-border hover:border-primary/40 hover:bg-muted/30",
+                      isChecked && "cursor-default"
                     )}
                   >
                     <span className={cn(
                       "flex items-center justify-center w-9 h-9 rounded-full border-2 font-semibold text-sm shrink-0 transition-colors",
-                      isSelected
+                      showCorrectFeedback
+                        ? "bg-green-500 text-white border-green-500"
+                        : showIncorrectFeedback
+                        ? "bg-destructive text-destructive-foreground border-destructive"
+                        : isSelected
                         ? "bg-primary text-primary-foreground border-primary"
                         : "border-foreground text-foreground"
                     )}>
-                      {letter}
+                      {showCorrectFeedback ? <CheckCircle className="w-5 h-5" /> : showIncorrectFeedback ? <XCircle className="w-5 h-5" /> : letter}
                     </span>
                     <span 
                       className="option-text flex-1 text-base"
@@ -118,7 +146,11 @@ export function QuestionCard({
                   {/* Side indicator */}
                   <span className={cn(
                     "flex items-center justify-center w-9 h-9 rounded-full border-2 text-sm font-medium transition-colors shrink-0",
-                    isSelected
+                    showCorrectFeedback
+                      ? "border-green-500 text-green-500"
+                      : showIncorrectFeedback
+                      ? "border-destructive text-destructive"
+                      : isSelected
                       ? "border-primary text-primary"
                       : "border-muted-foreground/20 text-muted-foreground/30"
                   )}>
@@ -129,15 +161,69 @@ export function QuestionCard({
             })}
           </div>
         ) : (
-          <div className="max-w-sm">
+          <div className="max-w-sm space-y-3">
             <Input
               ref={inputRef}
               type="text"
               value={selectedAnswer || ''}
-              onChange={(e) => onAnswerSelect(e.target.value)}
+              onChange={(e) => !isChecked && onAnswerSelect(e.target.value)}
+              disabled={isChecked}
               placeholder="Answer"
-              className="text-base h-12 rounded-full border-2 px-5"
+              className={cn(
+                "text-base h-12 rounded-full border-2 px-5",
+                isChecked && isCorrect && "border-green-500 bg-green-500/10",
+                isChecked && !isCorrect && "border-destructive bg-destructive/10"
+              )}
             />
+            {isChecked && !isCorrect && (
+              <p className="text-sm text-green-600 font-medium">
+                Correct answer: {question.answer}
+              </p>
+            )}
+          </div>
+        )}
+
+        {/* Check Answer Button */}
+        {!isChecked && selectedAnswer && (
+          <div className="mt-6">
+            <Button 
+              onClick={handleCheckAnswer}
+              className="bg-primary hover:bg-primary/90"
+            >
+              Check Answer
+            </Button>
+          </div>
+        )}
+
+        {/* Result Feedback */}
+        {isChecked && (
+          <div className={cn(
+            "mt-6 p-4 rounded-lg border-2",
+            isCorrect 
+              ? "bg-green-500/10 border-green-500" 
+              : "bg-destructive/10 border-destructive"
+          )}>
+            <div className="flex items-center gap-2 mb-2">
+              {isCorrect ? (
+                <>
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="font-semibold text-green-600">Correct!</span>
+                </>
+              ) : (
+                <>
+                  <XCircle className="w-5 h-5 text-destructive" />
+                  <span className="font-semibold text-destructive">Incorrect</span>
+                </>
+              )}
+            </div>
+            {/* Explanation */}
+            <div className="mt-3 pt-3 border-t border-border/50">
+              <p className="text-sm font-medium text-muted-foreground mb-2">Explanation:</p>
+              <div 
+                className="text-sm text-foreground"
+                dangerouslySetInnerHTML={{ __html: question.explanation || 'Explanation not added yet.' }}
+              />
+            </div>
           </div>
         )}
       </div>
