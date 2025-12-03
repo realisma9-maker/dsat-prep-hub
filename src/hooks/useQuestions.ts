@@ -24,6 +24,16 @@ export function useQuestions(topic: string | null) {
       const response = await fetch(fileMap[topicId]);
       const data = await response.json();
       
+      // Helper to clean up extra newlines and whitespace
+      const cleanText = (text: string): string => {
+        if (!text) return text;
+        return text
+          .replace(/\\n/g, ' ')  // Replace literal \n
+          .replace(/\n+/g, ' ')  // Replace actual newlines
+          .replace(/\s+/g, ' ')  // Collapse multiple spaces
+          .trim();
+      };
+
       // Normalize the data structure
       const normalized: Question[] = data.map((item: any, idx: number) => {
         // Determine question type
@@ -32,11 +42,14 @@ export function useQuestions(topic: string | null) {
           ? 'free-response' 
           : 'mcq';
         
+        // Clean options too
+        const options = (item.options || item.choices || []).map((opt: string) => cleanText(opt));
+        
         return {
           id: item.id || item.number || item.geometry_number || idx + 1,
-          question: item.question,
+          question: cleanText(item.question),
           type,
-          options: item.options || item.choices || [],
+          options,
           answer: item.answer,
           explanation: item.explanation || 'Explanation not added yet.',
           topic: topicId,

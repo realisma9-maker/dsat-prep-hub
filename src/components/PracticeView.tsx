@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useQuestions } from '@/hooks/useQuestions';
 import { useTimer } from '@/hooks/useTimer';
 import { QuestionCard } from './QuestionCard';
@@ -9,13 +9,21 @@ import { QuestionListModal } from './QuestionListModal';
 import { 
   ChevronLeft, 
   ChevronRight, 
-  BookOpen, 
-  Home, 
-  Clock, 
-  List,
-  RotateCcw 
+  ChevronDown,
+  Lightbulb,
+  Calculator,
+  FileText,
+  Maximize2,
+  Pause,
+  RotateCcw,
+  Info
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 interface PracticeViewProps {
   topic: string;
@@ -40,25 +48,14 @@ export function PracticeView({ topic, topicName, onBackToTopics }: PracticeViewP
     totalQuestions,
   } = useQuestions(topic);
 
-  const { formattedTime, isWarning, isDanger, reset: resetTimer } = useTimer(currentQuestion?.id ?? null);
+  const { formattedTime, isWarning, isDanger, reset: resetTimer, pause, resume, isRunning } = useTimer(currentQuestion?.id ?? null);
 
   const [showExplanation, setShowExplanation] = useState(false);
   const [showQuestionList, setShowQuestionList] = useState(false);
-  const [desmosCollapsed, setDesmosCollapsed] = useState(false);
-  const [referenceCollapsed, setReferenceCollapsed] = useState(true);
+  const [showDesmos, setShowDesmos] = useState(false);
+  const [showReference, setShowReference] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [animationDirection, setAnimationDirection] = useState<'left' | 'right' | null>(null);
-
-  // Auto-collapse panels on mobile
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 900) {
-        setDesmosCollapsed(true);
-      }
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -101,6 +98,25 @@ export function PracticeView({ topic, topicName, onBackToTopics }: PracticeViewP
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentQuestion, setAnswer]);
+
+  // Fullscreen handling
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, []);
 
   const handleNext = useCallback(() => {
     if (currentIndex < totalQuestions - 1) {
@@ -150,124 +166,181 @@ export function PracticeView({ topic, topicName, onBackToTopics }: PracticeViewP
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Top Bar */}
+      {/* Top Bar - Bluebook Style */}
       <header className="bg-card border-b border-border sticky top-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="px-4 py-3 flex items-center justify-between">
+          {/* Left Section */}
           <div className="flex items-center gap-4">
             <button
               onClick={onBackToTopics}
               className="p-2 rounded-lg hover:bg-secondary transition-colors"
               title="Back to Topics"
             >
-              <Home className="w-5 h-5" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
-            <div>
-              <h1 className="font-semibold text-foreground text-sm md:text-base">
-                Top 150 Hardest Math for DSAT
+            <div className="hidden sm:block">
+              <h1 className="font-semibold text-foreground">
+                SAT® Suite Question Bank
               </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">
-                {topicName} — Confidence Boost Collection
-              </p>
+              <button className="text-sm text-muted-foreground flex items-center gap-1 hover:text-foreground">
+                Directions <ChevronDown className="w-3 h-3" />
+              </button>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            {/* Timer */}
+          {/* Center Section - Timer */}
+          <div className="flex items-center gap-3">
             <div className={cn(
-              "timer-display flex items-center gap-2",
-              isWarning && "timer-warning",
-              isDanger && "timer-danger"
+              "font-mono text-2xl font-bold tabular-nums",
+              isWarning && "text-timer-warning",
+              isDanger && "text-timer-danger animate-pulse"
             )}>
-              <Clock className="w-4 h-4" />
               {formattedTime}
             </div>
+            <div className="flex items-center gap-1">
+              <button 
+                onClick={() => isRunning ? pause() : resume()}
+                className="p-2 rounded-full border border-border hover:bg-secondary transition-colors"
+                title={isRunning ? "Pause" : "Resume"}
+              >
+                <Pause className="w-4 h-4" />
+              </button>
+              <button 
+                className="px-3 py-1.5 rounded-full border border-border hover:bg-secondary transition-colors text-sm font-medium"
+              >
+                Hide
+              </button>
+            </div>
+          </div>
 
-            {/* Question Indicator */}
+          {/* Right Section - Tools */}
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setShowDesmos(!showDesmos)}
+              className={cn(
+                "flex flex-col items-center gap-0.5 text-muted-foreground hover:text-foreground transition-colors",
+                showDesmos && "text-primary"
+              )}
+            >
+              <Calculator className="w-5 h-5" />
+              <span className="text-xs hidden sm:block">Calculator</span>
+            </button>
+            <button 
+              onClick={() => setShowReference(!showReference)}
+              className={cn(
+                "flex flex-col items-center gap-0.5 text-muted-foreground hover:text-foreground transition-colors",
+                showReference && "text-primary"
+              )}
+            >
+              <FileText className="w-5 h-5" />
+              <span className="text-xs hidden sm:block">Reference</span>
+            </button>
+            <button 
+              onClick={toggleFullscreen}
+              className="flex flex-col items-center gap-0.5 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Maximize2 className="w-5 h-5" />
+              <span className="text-xs hidden sm:block">Fullscreen</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content - Centered Question */}
+      <main className="flex-1 flex flex-col">
+        <div className="flex-1 w-full max-w-4xl mx-auto px-4 py-8">
+          <QuestionCard
+            question={currentQuestion}
+            questionNumber={currentIndex + 1}
+            selectedAnswer={answers[currentQuestion.id]}
+            onAnswerSelect={(answer) => setAnswer(currentQuestion.id, answer)}
+            isMarkedForReview={markedForReview.includes(currentQuestion.id)}
+            onToggleMarkForReview={() => toggleMarkForReview(currentQuestion.id)}
+            animationDirection={animationDirection}
+          />
+        </div>
+
+        {/* Desmos Panel Overlay */}
+        {showDesmos && (
+          <DesmosPanel
+            isCollapsed={false}
+            onToggleCollapse={() => setShowDesmos(false)}
+          />
+        )}
+
+        {/* Reference Panel Overlay */}
+        {showReference && (
+          <ReferencePanel
+            imageUrl={currentQuestion.referenceImage}
+            isCollapsed={false}
+            onToggleCollapse={() => setShowReference(false)}
+          />
+        )}
+      </main>
+
+      {/* Bottom Navigation Bar - Bluebook Style */}
+      <footer className="bg-card border-t border-border sticky bottom-0 z-30">
+        <div className="px-4 py-3 flex items-center justify-between">
+          {/* Left - Question Number Dropdown */}
+          <div className="flex items-center gap-3">
             <button
               onClick={() => setShowQuestionList(true)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background font-medium text-sm hover:opacity-90 transition-opacity"
             >
-              <List className="w-4 h-4" />
-              <span className="font-medium text-sm">
-                {currentIndex + 1} of {totalQuestions}
-              </span>
+              {currentIndex + 1} of {totalQuestions}
+              <ChevronDown className="w-4 h-4" />
             </button>
-
-            {/* Reset */}
             <button
               onClick={() => {
                 if (confirm('Reset all progress for this topic?')) {
                   resetProgress();
                 }
               }}
-              className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-foreground"
+              className="p-2 rounded-full hover:bg-secondary transition-colors text-muted-foreground"
               title="Reset Progress"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
           </div>
-        </div>
-      </header>
 
-      {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-6">
-        <div className="flex flex-col lg:flex-row gap-6">
-          {/* Question Card - Left Side */}
-          <div className="flex-1 lg:max-w-3xl">
-            <QuestionCard
-              question={currentQuestion}
-              selectedAnswer={answers[currentQuestion.id]}
-              onAnswerSelect={(answer) => setAnswer(currentQuestion.id, answer)}
-              isMarkedForReview={markedForReview.includes(currentQuestion.id)}
-              onToggleMarkForReview={() => toggleMarkForReview(currentQuestion.id)}
-              animationDirection={animationDirection}
-            />
-          </div>
-
-          {/* Side Panels - Right Side */}
-          <div className="lg:w-80 space-y-4">
-            <DesmosPanel
-              isCollapsed={desmosCollapsed}
-              onToggleCollapse={() => setDesmosCollapsed(!desmosCollapsed)}
-            />
-            <ReferencePanel
-              imageUrl={currentQuestion.referenceImage}
-              isCollapsed={referenceCollapsed}
-              onToggleCollapse={() => setReferenceCollapsed(!referenceCollapsed)}
-            />
-          </div>
-        </div>
-      </main>
-
-      {/* Bottom Navigation Bar */}
-      <footer className="bg-card border-t border-border sticky bottom-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <button
-            onClick={() => setShowExplanation(true)}
-            className="nav-button bg-secondary text-secondary-foreground flex items-center gap-2"
-          >
-            <BookOpen className="w-4 h-4" />
-            <span className="hidden sm:inline">Explanation</span>
-          </button>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handlePrevious}
-              disabled={currentIndex === 0}
-              className="nav-button bg-secondary text-secondary-foreground flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Previous</span>
+          {/* Right - Actions */}
+          <div className="flex items-center gap-2">
+            <button className="p-2 rounded-full hover:bg-secondary transition-colors text-muted-foreground">
+              <Info className="w-5 h-5" />
             </button>
+            
+            <button
+              onClick={() => setShowExplanation(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              <Lightbulb className="w-4 h-4" />
+              Explanation
+            </button>
+
+            {currentIndex > 0 && (
+              <button
+                onClick={handlePrevious}
+                className="px-4 py-2 rounded-full border border-border hover:bg-secondary transition-colors font-medium text-sm"
+              >
+                Previous
+              </button>
+            )}
+            
             <button
               onClick={handleNext}
               disabled={currentIndex === totalQuestions - 1}
-              className="nav-button bg-primary text-primary-foreground flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-full border border-border hover:bg-secondary transition-colors font-medium text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <span className="hidden sm:inline">Next</span>
-              <ChevronRight className="w-4 h-4" />
+              Next
             </button>
           </div>
+        </div>
+
+        {/* SAT Disclaimer */}
+        <div className="text-center pb-2">
+          <p className="text-xs text-muted-foreground">
+            SAT® is a trademark registered by the College Board, which is not affiliated with, and does not endorse, this product.
+          </p>
         </div>
       </footer>
 
