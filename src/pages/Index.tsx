@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { TopicSelector } from '@/components/TopicSelector';
+import { PracticeView } from '@/components/PracticeView';
+
+const topicNames: Record<string, string> = {
+  algebra: 'Algebra',
+  advanced_math: 'Advanced Math',
+  problem_solving: 'Problem Solving & Data Analysis',
+  geometry: 'Geometry & Trigonometry',
+};
 
 const Index = () => {
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>DSAT Math Practice | Top 150 Hardest Questions</title>
+        <meta name="description" content="Practice the hardest Digital SAT Math questions with our Bluebook-style interface. Features Desmos calculator, per-question timers, and detailed explanations." />
+      </Helmet>
+
+      {selectedTopic ? (
+        <PracticeView
+          topic={selectedTopic}
+          topicName={topicNames[selectedTopic]}
+          onBackToTopics={() => setSelectedTopic(null)}
+        />
+      ) : (
+        <TopicSelector onSelectTopic={setSelectedTopic} />
+      )}
+    </>
   );
 };
 

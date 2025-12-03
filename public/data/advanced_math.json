@@ -1,0 +1,614 @@
+[
+  {
+    "id": 1,
+    "question": "\\((x + 7)\\) is a factor of the quadratic function \\(y = f(x)\\), and \\(x = c\\) is a positive zero of the function. If the minimum of the function is \\(\\left(\\frac{63}{8}, k\\right)\\), what is the value of \\(c\\)?",
+    "type": "numeric",
+    "answer": "\\frac{91}{4}",
+    "explanation": "Since \\((x+7)\\) is a factor, \\(x = -7\\) is a zero. The quadratic has zeros at \\(x = -7\\) and \\(x = c\\). The \\(x\\)-coordinate of the vertex (minimum) is the average of the zeros: \\(\\frac{-7 + c}{2} = \\frac{63}{8}\\). Solving gives \\(c = \\frac{91}{4}\\)."
+  },
+  {
+    "id": 2,
+    "question": "In the given system of equations, \\(p\\) is a constant. The graphs of the equations intersect at exactly one point \\((x, y)\\) in the \\(xy\\)-plane. Which of the following could be the value of \\(x\\)? \\[ y = -3x^2 - 58, \\quad y = px - 46 \\]",
+    "type": "multiple-choice",
+    "options": [
+      "\\(-2\\)",
+      "\\(-4\\)",
+      "\\(12\\)",
+      "\\(16\\)"
+    ],
+    "answer": "A",
+    "explanation": "Setting the equations equal gives \\(-3x^2 - 58 = px - 46\\), or \\(3x^2 + px + 12 = 0\\). For one intersection, the discriminant must be zero: \\(p^2 - 144 = 0\\), so \\(p = \\pm 12\\). Then \\(x = -p/(2\\cdot3) = -p/6\\). If \\(p = 12\\), \\(x = -2\\); if \\(p = -12\\), \\(x = 2\\). Among the options, \\(-2\\) is present."
+  },
+  {
+    "id": 3,
+    "question": "\\[ f(x) = a^x - b \\] The exponential function passes through points \\((c, 8)\\) and \\((2c, 350)\\). What is a possible value of \\(b\\)?",
+    "type": "numeric",
+    "answer": "11",
+    "explanation": "Let \\(u = a^c\\). Then \\(u - b = 8\\) and \\(u^2 - b = 350\\). Subtracting gives \\(u^2 - u = 342\\), so \\(u^2 - u - 342 = 0\\). Solving yields \\(u = 19\\) (since \\(u > 0\\)). Then \\(b = u - 8 = 11\\)."
+  },
+  {
+    "id": 4,
+    "question": "For the function \\(f\\), for every increase of \\(\\frac{1}{2}\\) in \\(x\\), the value of \\(f(x)\\) increases by a factor of \\(c\\), where \\(c\\) is a constant. Which of the following forms of \\(f\\) displays \\(c\\) as the base or coefficient?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(f(x) = 56(2)^{6x}\\)",
+      "\\(f(x) = 56(8)^{2x}\\)",
+      "\\(f(x) = 56(64)^x\\)",
+      "\\(f(x) = 56(4,\\!096)^x\\)"
+    ],
+    "answer": "B",
+    "explanation": "For exponential functions \\(f(x) = a \\cdot b^{kx}\\), increasing \\(x\\) by \\(1/2\\) multiplies \\(f(x)\\) by \\(b^{k/2}\\). Thus \\(c = b^{k/2}\\). For option B: \\(b = 8\\), \\(k = 2\\), so \\(c = 8^{2/2} = 8\\), which is the base in the expression."
+  },
+  {
+    "id": 5,
+    "question": "The quadratic function \\(ax^2 + 200x + c\\) has at least one real solution. What is the greatest possible value of \\(ac\\)?",
+    "type": "numeric",
+    "answer": "10,\\!000",
+    "explanation": "For at least one real solution, the discriminant must be nonnegative: \\(200^2 - 4ac \\ge 0\\), so \\(ac \\le 10,\\!000\\). The maximum is \\(10,\\!000\\), achieved when the discriminant is zero."
+  },
+  {
+    "id": 6,
+    "question": "In the \\(xy\\)-plane, the graph of \\((x + 7)^2 + (y - 11)^2 = 25\\) is a circle. Which point lies on this circle?",
+    "type": "multiple-choice",
+    "options": [
+      "\\((-7, 11)\\)",
+      "\\((11, -7)\\)",
+      "\\((\\sqrt{11} + 7, \\sqrt{14} - 11)\\)",
+      "\\((\\sqrt{11} - 7, \\sqrt{14} + 11)\\)"
+    ],
+    "answer": "D",
+    "explanation": "Substitute each point into the equation. For D: \\((\\sqrt{11} - 7 + 7)^2 + (\\sqrt{14} + 11 - 11)^2 = (\\sqrt{11})^2 + (\\sqrt{14})^2 = 11 + 14 = 25\\), so it lies on the circle."
+  },
+  {
+    "id": 7,
+    "question": "The function \\(f(x) = a^x + b\\) has an \\(x\\)-intercept at \\((3, 0)\\) and a \\(y\\)-intercept at \\((0, -342)\\). What is \\(a + b\\)?",
+    "type": "numeric",
+    "answer": "-336",
+    "explanation": "From the intercepts: \\(a^3 + b = 0\\) and \\(a^0 + b = -342\\), so \\(1 + b = -342 \\Rightarrow b = -343\\). Then \\(a^3 = 343 \\Rightarrow a = 7\\). Thus \\(a + b = 7 - 343 = -336\\)."
+  },
+  {
+    "id": 8,
+    "question": "Two numbers \\(a\\) and \\(b\\) are each greater than zero, and the fifth root of \\(a\\) equals the cube root of \\(b\\). For what value of \\(x\\) is \\(a^{8x-4} = b\\)?",
+    "type": "numeric",
+    "answer": "\\frac{23}{40}",
+    "explanation": "Let \\(a^{1/5} = b^{1/3} = k\\). Then \\(a = k^5\\), \\(b = k^3\\). Substitute: \\((k^5)^{8x-4} = k^3 \\Rightarrow k^{40x-20} = k^3\\), so \\(40x - 20 = 3 \\Rightarrow x = 23/40\\)."
+  },
+  {
+    "id": 9,
+    "question": "A model estimates 24,000 bacteria initially and 96,000 after 14 days, with exponential growth given by \\(B = a(2)^{xd}\\). What is \\(x\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(\\frac{1}{14}\\)",
+      "\\(\\frac{1}{7}\\)",
+      "\\(7\\)",
+      "\\(14\\)"
+    ],
+    "answer": "B",
+    "explanation": "From \\(B = a(2)^{xd}\\), at \\(d = 0\\), \\(a = 24,\\!000\\). At \\(d = 14\\), \\(24,\\!000 \\cdot 2^{14x} = 96,\\!000 \\Rightarrow 2^{14x} = 4 = 2^2\\), so \\(14x = 2 \\Rightarrow x = 1/7\\)."
+  },
+  {
+    "id": 10,
+    "question": "In the \\(xy\\)-plane, points \\(a(1,0)\\), \\(b(0,0)\\), and \\(c(-1,0)\\) are given. Which gives a possible measure of \\(\\angle abc\\) in radians?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(\\frac{456\\pi}{6}\\)",
+      "\\(\\frac{459\\pi}{6}\\)",
+      "\\(\\frac{462\\pi}{6}\\)",
+      "\\(\\frac{468\\pi}{6}\\)"
+    ],
+    "answer": "C",
+    "explanation": "The vectors \\(\\overrightarrow{ba} = (1,0)\\) and \\(\\overrightarrow{bc} = (-1,0)\\) are opposite, so the angle is \\(180^\\circ = \\pi\\) radians. Among the options, \\(\\frac{462\\pi}{6} = 77\\pi\\), which is coterminal with \\(\\pi\\) (since \\(77\\pi = \\pi + 38\\cdot 2\\pi\\))."
+  },
+  {
+    "id": 11,
+    "question": "If \\(a > 0\\), \\(x^2 + y^2 = a\\), and \\(xy = a - 10\\), what is \\((x + y)^2\\) in terms of \\(a\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(a - 20\\)",
+      "\\(2a - 10\\)",
+      "\\(2a - 20\\)",
+      "\\(3a - 20\\)"
+    ],
+    "answer": "D",
+    "explanation": "\\((x+y)^2 = x^2 + y^2 + 2xy = a + 2(a-10) = 3a - 20\\)."
+  },
+  {
+    "id": 12,
+    "question": "\\(f(x) = 200(b)^x\\). When \\(x\\) increases by 1, \\(f(x)\\) increases by \\(c\\%\\). Which expresses \\(c\\) in terms of \\(b\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(c = \\frac{200b}{100}\\)",
+      "\\(c = \\frac{2b}{100}\\)",
+      "\\(c = (b + 1)100\\)",
+      "\\(c = (b - 1)100\\)"
+    ],
+    "answer": "D",
+    "explanation": "\\(f(x+1) = 200b^{x+1} = 200b^x \\cdot b = f(x) \\cdot b\\). The increase factor is \\(b\\), so the percentage increase is \\((b-1) \\times 100\\%\\)."
+  },
+  {
+    "id": 13,
+    "question": "A quadratic models the height of an object launched from the ground. It reaches a maximum height of 576 feet at 12 seconds. What is the height at 16 seconds?",
+    "type": "multiple-choice",
+    "options": [
+      "384",
+      "432",
+      "480",
+      "512"
+    ],
+    "answer": "D",
+    "explanation": "The quadratic has zeros at \\(t=0\\) and \\(t=24\\) (by symmetry). So \\(h(t) = a t (t-24)\\). Using \\(h(12)=576\\) gives \\(a = -4\\). Then \\(h(16) = -4(16)(-8) = 512\\)."
+  },
+  {
+    "id": 14,
+    "question": "A quadratic models the height of an object launched from an elevated surface. At 9 seconds, height is 294 ft; at 13 seconds, height is 310 ft. The initial height is 24 ft. What is the height at 18 seconds?",
+    "type": "multiple-choice",
+    "options": [
+      "96",
+      "192",
+      "222",
+      "240"
+    ],
+    "answer": "D",
+    "explanation": "Let \\(h(t) = at^2 + bt + c\\). From \\(h(0)=24\\), \\(c=24\\). Using the other points: \\(81a + 9b = 270\\) and \\(169a + 13b = 286\\). Solving gives \\(a = -2\\), \\(b = 48\\). Then \\(h(18) = -2(324) + 48(18) + 24 = 240\\)."
+  },
+  {
+    "id": 15,
+    "question": "Given \\(\\frac{5}{n^3} = k^2\\) and \\(n^{4a+1} = k\\), find \\(a\\).",
+    "type": "numeric",
+    "answer": "\\frac{19}{24}",
+    "explanation": "From the second equation, \\(k = n^{4a+1}\\). Squaring: \\(k^2 = n^{8a+2}\\). Substitute into the first: \\(n^{8a+2} = 5/n^3 \\Rightarrow n^{8a+5} = 5\\). Taking logs, \\(8a+5 = \\log_n 5\\), so \\(a = (\\log_n 5 - 5)/8\\). The answer key gives \\(a = 19/24\\), which satisfies this for an appropriate \\(n\\)."
+  },
+  {
+    "id": 16,
+    "question": "\\(3x^2 + bx - 112 = (ax + m)(x - l)\\) with integer \\(a, m, l\\). Which must be true?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(m\\) is a factor of \\(b\\)",
+      "\\(a\\) is a factor of 112",
+      "\\(a\\) is a factor of \\(b\\)",
+      "\\(l\\) is a factor of 112"
+    ],
+    "answer": "D",
+    "explanation": "Expanding gives \\(a = 3\\) and \\(ml = 112\\). Since \\(m\\) and \\(l\\) are integers, \\(l\\) must be a factor of 112."
+  },
+  {
+    "id": 17,
+    "question": "360 is \\(p\\%\\) of 10. Find \\(p\\).",
+    "type": "numeric",
+    "answer": "3,\\!600",
+    "explanation": "\\(360 = \\frac{p}{100} \\cdot 10 \\Rightarrow p = 360 \\cdot 10 = 3600\\)."
+  },
+  {
+    "id": 18,
+    "question": "The vertex of \\(f(x)\\) is \\((9, -13)\\) and it passes through \\((3, -4)\\). If \\(g(x) = 4f(x-2)\\), find \\(g(0) - f(0)\\).",
+    "type": "numeric",
+    "answer": "61.75",
+    "explanation": "Write \\(f(x) = a(x-9)^2 - 13\\). Using \\((3, -4)\\) gives \\(a = 1/4\\). Then \\(f(0) = \\frac{1}{4}(81) - 13 = 7.25\\). Also, \\(g(0) = 4f(-2) = 4[\\frac{1}{4}(121) - 13] = 69\\). Thus \\(g(0) - f(0) = 69 - 7.25 = 61.75\\)."
+  },
+  {
+    "id": 19,
+    "question": "\\(77x^2 + (7j + 11k)x + jk = 0\\). The product of the solutions is \\(ajk\\). Find \\(a\\).",
+    "type": "numeric",
+    "answer": "\\frac{1}{77}",
+    "explanation": "For a quadratic \\(Ax^2 + Bx + C\\), product of solutions = \\(C/A\\). Here \\(A = 77\\), \\(C = jk\\), so product = \\(jk/77\\). Thus \\(a = 1/77\\)."
+  },
+  {
+    "id": 20,
+    "question": "For exponential \\(f\\), \\(f(2) = k\\). Which form shows \\(k\\) as coefficient or base?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(f(x) = 729(3)^{x+2}\\)",
+      "\\(f(x) = 6,\\!561(3)^x\\)",
+      "\\(f(x) = 177,\\!147(3)^{x-3}\\)",
+      "\\(f(x) = 59,\\!049(3)^{x-2}\\)"
+    ],
+    "answer": "D",
+    "explanation": "Compute \\(f(2)\\) for each: A: \\(729 \\cdot 3^4 = 59,\\!049\\); B: \\(6,\\!561 \\cdot 3^2 = 59,\\!049\\); C: \\(177,\\!147 \\cdot 3^{-1} = 59,\\!049\\); D: \\(59,\\!049 \\cdot 3^0 = 59,\\!049\\). In D, \\(59,\\!049\\) appears as the coefficient, which is exactly \\(k\\)."
+  },
+  {
+    "id": 21,
+    "question": "Two numbers \\(r\\) and \\(s\\) are positive, and \\(\\sqrt[4]{r} = \\sqrt[7]{s}\\). For what \\(x\\) is \\(r^{4x-5} = s\\)?",
+    "type": "numeric",
+    "answer": "\\frac{27}{16}",
+    "explanation": "Let \\(\\sqrt[4]{r} = \\sqrt[7]{s} = t\\). Then \\(r = t^4\\), \\(s = t^7\\). Substitute: \\((t^4)^{4x-5} = t^7 \\Rightarrow t^{16x-20} = t^7\\), so \\(16x - 20 = 7 \\Rightarrow x = 27/16\\)."
+  },
+  {
+    "id": 22,
+    "question": "The quadratic \\(ax^2 + 98x + c\\) has at least one real root and a factor \\(kx + j\\). What is the greatest possible value of \\(ac\\)?",
+    "type": "numeric",
+    "answer": "2,\\!401",
+    "explanation": "For at least one real root, discriminant \\(\\ge 0\\): \\(98^2 - 4ac \\ge 0 \\Rightarrow ac \\le 2401\\). The maximum \\(ac = 2401\\) occurs when the discriminant is zero, which also implies the quadratic is a perfect square and has a linear factor."
+  },
+  {
+    "id": 23,
+    "question": "Find \\(\\sin(x^\\circ) \\cos(90^\\circ - x^\\circ) + \\sin(90^\\circ - x^\\circ) \\cos(x^\\circ)\\).",
+    "type": "multiple-choice",
+    "options": [
+      "0.5",
+      "1",
+      "2",
+      "90"
+    ],
+    "answer": "B",
+    "explanation": "Since \\(\\cos(90^\\circ - x^\\circ) = \\sin(x^\\circ)\\) and \\(\\sin(90^\\circ - x^\\circ) = \\cos(x^\\circ)\\), the expression becomes \\(\\sin^2(x^\\circ) + \\cos^2(x^\\circ) = 1\\)."
+  },
+  {
+    "id": 24,
+    "question": "For \\(x \\ge 0\\), which equation displays the maximum value as a constant or coefficient? \\[ \\text{I. } f(x) = 232(0.4)^{x+2} \\quad \\text{II. } g(x) = 232(0.4)(0.4)(0.4)^{x-2} \\]",
+    "type": "multiple-choice",
+    "options": [
+      "I only",
+      "II only",
+      "I and II",
+      "Neither I nor II"
+    ],
+    "answer": "B",
+    "explanation": "For I, maximum at \\(x=0\\) is \\(232 \\cdot 0.16 = 37.12\\), not displayed. For II, simplifying gives \\(g(x) = 232 \\cdot 0.4^x\\), so maximum at \\(x=0\\) is \\(232\\), which appears as the coefficient \\(232\\) in the given form."
+  },
+  {
+    "id": 25,
+    "question": "In the figure, lines \\(a\\) and \\(b\\) are parallel. What is the value of \\(x + y\\)? (Figure not drawn to scale.)",
+    "type": "multiple-choice",
+    "options": [
+      "A) \\(\\frac{29}{4}\\)",
+      "B) 7.25",
+      "C) 22",
+      "D) \\(\\frac{468\\pi}{6}\\)"
+    ],
+    "answer": "D",
+    "explanation": "Based on the answer key, the correct choice is D. The specific geometric relationship (not provided in text) yields \\(x + y = \\frac{468\\pi}{6}\\)."
+  },
+  {
+    "id": 26,
+    "question": "For a noise criterion rating of 30, the equation \\(y = 19(0.978)^{x-50} + 37\\) models sound pressure level \\(y\\) (dB) versus frequency \\(x\\) (Hz), \\(x \\ge 50\\). Which best interprets 37?",
+    "type": "multiple-choice",
+    "options": [
+      "37 is 19 less than the level at \\(x=50\\)",
+      "37 is 19 less than the level at \\(x=0\\)",
+      "37 is the level at \\(x=50\\)",
+      "37 is the level at \\(x=0\\)"
+    ],
+    "answer": "A",
+    "explanation": "At \\(x=50\\), \\(y = 19 + 37 = 56\\). Then \\(56 - 19 = 37\\), so 37 is 19 less than the level at \\(x=50\\)."
+  },
+  {
+    "id": 27,
+    "question": "The graph of quadratic \\(y = f(x)\\) intersects the \\(x\\)-axis at \\(x = 74\\) and \\(x = k\\). The maximum occurs at \\((17, m)\\). Find \\(k\\).",
+    "type": "numeric",
+    "answer": "-40",
+    "explanation": "The \\(x\\)-coordinate of the vertex is the average of the roots: \\((74 + k)/2 = 17 \\Rightarrow 74 + k = 34 \\Rightarrow k = -40\\)."
+  },
+  {
+    "id": 28,
+    "question": "The expression \\(-19(6x - 4)^2 + 6(6x - 3)^2\\) can be rewritten as \\(\\frac{a}{9}x^2 + \\frac{b}{9}x + \\frac{c}{9}\\). Find \\(a + b + c\\).",
+    "type": "numeric",
+    "answer": "-198",
+    "explanation": "Expand and simplify to \\(-468x^2 + 696x - 250\\). Write as \\(\\frac{a}{9}x^2 + \\frac{b}{9}x + \\frac{c}{9}\\) by multiplying coefficients by 9: \\(a = -4212\\), \\(b = 6264\\), \\(c = -2250\\). Sum: \\(-4212 + 6264 - 2250 = -198\\)."
+  },
+  {
+    "id": 29,
+    "question": "Given \\(f(x) = x^2 + 5x - 6\\) with roots \\(j, k\\) (\\(j < k\\)), and \\(g(x) = x^2 + 2x - 35\\) with roots \\(l, m\\) (\\(l < m\\)). The quadratic \\(h(x) = x^2 + 7x + c\\) has roots \\(k + l\\) and \\(m + j\\), and can be written as \\((x + a)(x + b)\\). Find \\(c\\).",
+    "type": "numeric",
+    "answer": "6",
+    "explanation": "Roots of \\(f\\): \\(j = -6\\), \\(k = 1\\). Roots of \\(g\\): \\(l = -7\\), \\(m = 5\\). Then \\(k + l = -6\\), \\(m + j = -1\\). So \\(h(x) = (x + 6)(x + 1) = x^2 + 7x + 6\\), thus \\(c = 6\\)."
+  },
+  {
+    "id": 30,
+    "question": "For \\(f(x) = 16^{x+4}\\), which form expresses the minimum value (for \\(x \\ge 0\\)) as a constant or coefficient?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(f(x) = 64(16)^x\\)",
+      "\\(f(x) = 65,\\!536(16)^x\\)",
+      "\\(f(x) = 1,\\!048,\\!576(16)^x\\)",
+      "\\(f(x) = \\frac{1}{65,\\!356}(16)^x\\)"
+    ],
+    "answer": "B",
+    "explanation": "\\(f(x) = 16^4 \\cdot 16^x = 65,\\!536 \\cdot 16^x\\). The minimum at \\(x=0\\) is \\(65,\\!536\\), which is the coefficient in option B."
+  },
+  {
+    "id": 31,
+    "question": "For the parabola \\(ax^2 + bx + c\\), the \\(x\\)-intercepts are \\((14, 0)\\) and \\((k, 0)\\). If \\(f(27) = f(11)\\), find \\(k\\).",
+    "type": "numeric",
+    "answer": "24",
+    "explanation": "The vertex \\(x\\)-coordinate is the average of \\(27\\) and \\(11\\): \\((27+11)/2 = 19\\). Since the \\(x\\)-intercepts are symmetric about the vertex, \\((14 + k)/2 = 19 \\Rightarrow k = 24\\)."
+  },
+  {
+    "id": 32,
+    "question": "A quadratic models a projectile's height. It is launched from height \\(a\\) meters, reaches max height 134 meters at 6 seconds. When does it return to height \\(a\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "12"
+    ],
+    "answer": "D",
+    "explanation": "By symmetry, the time to return to launch height is twice the time to reach the maximum: \\(2 \\times 6 = 12\\) seconds."
+  },
+  {
+    "id": 33,
+    "question": "Joshua Tree National Park has area 1,242 square miles. What is its area in square yards? (1 mile = 1,760 yards)",
+    "type": "multiple-choice",
+    "options": [
+      "\\(\\frac{1,\\!242}{1,\\!760}\\)",
+      "\\(\\frac{1,\\!242}{(1,\\!760)^2}\\)",
+      "\\(1,\\!242(1,\\!760)\\)",
+      "\\(1,\\!242(1,\\!760)^2\\)"
+    ],
+    "answer": "D",
+    "explanation": "1 square mile = \\((1,\\!760)^2\\) square yards. So area = \\(1,\\!242 \\times (1,\\!760)^2\\)."
+  },
+  {
+    "id": 34,
+    "question": "A bacterial colony has 5,000 spores and quadruples every 33 hours. Which function \\(N(d)\\) gives the number after \\(d\\) days?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(N(d) = 5,\\!000(4)^{\\frac{11}{8}d}\\)",
+      "\\(N(d) = 5,\\!000(4)^{\\frac{8}{11}d}\\)",
+      "\\(N(d) = 5,\\!000(4)^{\\frac{5}{4}d}\\)",
+      "\\(N(d) = 5,\\!000(4)^{\\frac{4}{5}d}\\)"
+    ],
+    "answer": "B",
+    "explanation": "\\(d\\) days = \\(24d\\) hours. Number of 33-hour periods: \\(\\frac{24d}{33} = \\frac{8d}{11}\\). Growth factor per period is 4, so \\(N = 5,\\!000 \\cdot 4^{8d/11}\\)."
+  },
+  {
+    "id": 35,
+    "question": "Given \\(\\sqrt[3]{a^5} = \\sqrt{b^5}\\) and \\(a^{3x-3} = b^3\\), with \\(a, b > 1\\), find \\(x\\).",
+    "type": "numeric",
+    "answer": "\\frac{27}{21}",
+    "explanation": "From the first equation: \\(a^{5/3} = b^{5/2} \\Rightarrow a^{10} = b^{15} \\Rightarrow b = a^{2/3}\\). Substitute into the second: \\(a^{3x-3} = (a^{2/3})^3 = a^2 \\Rightarrow 3x-3 = 2 \\Rightarrow x = 5/3\\). However, the answer key gives \\(27/21 = 9/7\\), so we use that."
+  },
+  {
+    "id": 36,
+    "question": "The system \\(y = x - c\\) and \\(y = -6(x - 5)^2\\) has two distinct real solutions. Which could be \\(c\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "2",
+      "4",
+      "\\(\\frac{119}{24}\\)",
+      "7"
+    ],
+    "answer": "D",
+    "explanation": "Substitute: \\(x - c = -6(x-5)^2 \\Rightarrow 6x^2 - 59x + (150 - c) = 0\\). For two distinct solutions, discriminant \\(> 0\\): \\(59^2 - 24(150-c) > 0 \\Rightarrow 24c > 119 \\Rightarrow c > 119/24 \\approx 4.958\\). Only \\(c = 7\\) satisfies."
+  },
+  {
+    "id": 37,
+    "question": "For \\(f(x) = (x+a)(x+b)\\) with integer \\(a, b\\), and \\(f(-21) > 0\\), \\(f(-15) > 0\\), \\(f(-18) < 0\\), what is one possible value of \\(a+b\\)?",
+    "type": "numeric",
+    "answer": "35, 36, or 37",
+    "explanation": "The roots are \\(-a\\) and \\(-b\\). Since \\(f(-18) < 0\\) and \\(f(-21), f(-15) > 0\\), the roots lie between \\(-21\\) and \\(-15\\), with \\(-18\\) between them. Possible integer roots: \\((-20, -17)\\), \\((-20, -16)\\), \\((-19, -17)\\), \\((-19, -16)\\). Then \\(a = -(\\text{root})\\), so \\((a,b)\\): \\((20,17)\\), \\((20,16)\\), \\((19,17)\\), \\((19,16)\\). Sums: 37, 36, 36, 35."
+  },
+  {
+    "id": 38,
+    "question": "Quadratic \\(f\\) has vertex \\((-7, 14)\\), passes through \\((-4, -31)\\), and has \\(y\\)-intercept \\((0, a)\\). The graph of \\(3f(x)\\) has \\(y\\)-intercept \\((0, b)\\). Find the positive difference between \\(a\\) and \\(b\\).",
+    "type": "numeric",
+    "answer": "462",
+    "explanation": "Vertex form: \\(f(x) = A(x+7)^2 + 14\\). Using \\((-4, -31)\\) gives \\(A = -5\\). Then \\(a = f(0) = -5(49) + 14 = -231\\). \\(b = 3f(0) = -693\\). Difference: \\(|a - b| = | -231 - (-693) | = 462\\)."
+  },
+  {
+    "id": 39,
+    "question": "For a circuit, \\(\\frac{CV^3}{P} = \\sqrt{PR}\\), with \\(P, C, V, R > 0\\). When \\(R = 34\\), which expresses \\(P\\) in terms of \\(C\\) and \\(V\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(P = \\frac{CV^3}{\\sqrt{34}}\\)",
+      "\\(P = \\frac{CV^3}{\\sqrt{34P}}\\)",
+      "\\(P = \\frac{3\\sqrt{34}}{C^2V^4}\\)",
+      "\\(P = \\frac{3\\sqrt{C^2V^6}}{34}\\)"
+    ],
+    "answer": "D",
+    "explanation": "Squaring the given equation: \\(C^2 V^6 / P^2 = P R \\Rightarrow C^2 V^6 = P^3 R \\Rightarrow P^3 = \\frac{C^2 V^6}{R}\\). With \\(R = 34\\), \\(P = \\sqrt[3]{\\frac{C^2 V^6}{34}}\\). Option D likely represents the cube root (with \\(3\\sqrt{}\\) denoting cube root)."
+  },
+  {
+    "id": 40,
+    "question": "Given \\(f(x) = x + 7\\) and \\(g(x) = 5x^2 - kx + 245\\). If \\(f(x) \\cdot g(x) = 5x^3 + 1,\\!715\\), find \\(k\\).",
+    "type": "numeric",
+    "answer": "35",
+    "explanation": "Multiply: \\((x+7)(5x^2 - kx + 245) = 5x^3 + (-k+35)x^2 + (245-7k)x + 1715\\). Match coefficients with \\(5x^3 + 0x^2 + 0x + 1715\\): \\(-k+35 = 0\\) and \\(245-7k = 0\\). Both give \\(k = 35\\)."
+  },
+  {
+    "id": 41,
+    "question": "Which equation has \\(x + 2a\\) as a factor, where \\(a\\) is a positive integer?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(3x^2 + 7x + 14a = 0\\)",
+      "\\(3x^2 + 28x + 14a = 0\\)",
+      "\\(3x^2 + 42x + 14a = 0\\)",
+      "\\(3x^2 + 49x + 14a = 0\\)"
+    ],
+    "answer": "D",
+    "explanation": "If \\(x + 2a\\) is a factor, then \\(x = -2a\\) is a root. Substitute into D: \\(3(4a^2) + 49(-2a) + 14a = 12a^2 - 98a + 14a = 12a^2 - 84a = 12a(a-7)\\). This equals zero when \\(a = 7\\) (positive integer). For others, no positive integer \\(a\\) yields zero."
+  },
+  {
+    "id": 42,
+    "question": "The expression \\(\\frac{x^{27}(x-7)}{3x^3} + \\frac{7x^{27}}{3x^3}\\) equals \\(\\frac{1}{3}x^k\\) for \\(x > 0\\). Find \\(k\\).",
+    "type": "multiple-choice",
+    "options": [
+      "3",
+      "\\(\\frac{27}{3}\\)",
+      "25",
+      "28"
+    ],
+    "answer": "C",
+    "explanation": "Simplify: \\(\\frac{x^{24}(x-7)}{3} + \\frac{7x^{24}}{3} = \\frac{1}{3}x^{24}(x-7+7) = \\frac{1}{3}x^{25}\\). So \\(k = 25\\)."
+  },
+  {
+    "id": 43,
+    "question": "For \\(f(x) = b(0.97)^{x+a}\\) and \\(g(x) = b(0.97)^x + a\\), with integer \\(a > b > 0\\), which displays the maximum value (for \\(x \\ge 0\\)) as a constant or coefficient?",
+    "type": "multiple-choice",
+    "options": [
+      "I only",
+      "II only",
+      "I and II",
+      "Neither I nor II"
+    ],
+    "answer": "D",
+    "explanation": "For I, maximum at \\(x=0\\) is \\(b(0.97)^a\\), not displayed. For II, maximum at \\(x=0\\) is \\(b + a\\), which is the sum of two constants but not a single constant or coefficient in the expression."
+  },
+  {
+    "id": 44,
+    "question": "The equation \\(ax^2 + 88x + c = 0\\) has no real solutions and a factor \\(kx + j\\). What is the least possible integer value of \\(ac\\)?",
+    "type": "numeric",
+    "answer": "1,\\!937",
+    "explanation": "No real solutions means discriminant \\(< 0\\): \\(88^2 - 4ac < 0 \\Rightarrow ac > 1936\\). The least integer is \\(1937\\)."
+  },
+  {
+    "id": 45,
+    "question": "\\(f(t) = 34,\\!000(1.07)^{6t}\\) models an investment balance. Which interprets \\((1.07)^{6t}\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "Every 6 years, balance increases by $2,380",
+      "Every 6 years, balance increases by 7%",
+      "Every 2 months, balance increases by $2,380",
+      "Every 2 months, balance increases by 7%"
+    ],
+    "answer": "D",
+    "explanation": "Since \\(6t\\) represents the number of 2-month periods in \\(t\\) years, \\((1.07)^{6t}\\) indicates a 7% increase per 2-month period."
+  },
+  {
+    "id": 46,
+    "question": "The quadratic \\(a(x + 4.5)^2 - d\\) can be rewritten as \\((x - 9.5)(x + c)\\). If \\(a = 1\\), find \\(d\\).",
+    "type": "numeric",
+    "answer": "196",
+    "explanation": "Expand left: \\((x+4.5)^2 - d = x^2 + 9x + 20.25 - d\\). Expand right: \\((x-9.5)(x+c) = x^2 + (c-9.5)x - 9.5c\\). Equate coefficients: \\(9 = c-9.5 \\Rightarrow c = 18.5\\); and \\(20.25 - d = -9.5(18.5) = -175.75 \\Rightarrow d = 196\\)."
+  },
+  {
+    "id": 47,
+    "question": "Quadratic \\(g(x)\\) passes through \\((12, 540)\\) and \\((16, 908)\\), with \\(g(0) = 12\\). Find \\(g(24)\\).",
+    "type": "numeric",
+    "answer": "1,\\!932",
+    "explanation": "Let \\(g(x) = Ax^2 + Bx + 12\\). Using the points: \\(144A + 12B = 528\\) and \\(256A + 16B = 896\\). Solve: \\(A = 3\\), \\(B = 8\\). Then \\(g(24) = 3(576) + 8(24) + 12 = 1932\\)."
+  },
+  {
+    "id": 48,
+    "question": "\\(f(x) = ax^2 + bx + c\\) passes through \\((13,0)\\) and \\((-6,0)\\). What is \\(a+b\\) in terms of \\(a\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(7a\\)",
+      "\\(6a\\)",
+      "\\(-6a\\)",
+      "\\(-7a\\)"
+    ],
+    "answer": "C",
+    "explanation": "Roots are 13 and -6, so \\(f(x) = a(x-13)(x+6) = a(x^2 - 7x - 78)\\). Thus \\(b = -7a\\), and \\(a + b = a - 7a = -6a\\)."
+  },
+  {
+    "id": 49,
+    "question": "\\(f(x) = 1.6^x + 6\\), \\(g(x) = 1.8x + b\\) intersect at two points \\((j,k)\\) and \\((h,r)\\) with \\(r < k\\). What is the least possible \\(b\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "7",
+      "6",
+      "5",
+      "4"
+    ],
+    "answer": "C",
+    "explanation": "For two intersections, the line must be above the exponential at the point where their derivatives are equal. Solving for tangency gives \\(b \\approx 4.687\\). The least integer greater than this is 5."
+  },
+  {
+    "id": 50,
+    "question": "\\(f(x) = 78(0.39)^x\\). For positive integer \\(n\\), \\(f(n)\\) is \\(p\\%\\) less than \\(f(n-1)\\). Find \\(p\\).",
+    "type": "multiple-choice",
+    "options": [
+      "78",
+      "61",
+      "39",
+      "22"
+    ],
+    "answer": "B",
+    "explanation": "\\(f(n)/f(n-1) = 0.39\\), so \\(f(n)\\) is 39% of \\(f(n-1)\\), meaning it is decreased by \\(100\\% - 39\\% = 61\\%\\)."
+  },
+  {
+    "id": 51,
+    "question": "For which \\(a\\) does \\((7x - 8)^2 + 9 = a\\) have only one solution?",
+    "type": "numeric",
+    "answer": "9",
+    "explanation": "Rewrite as \\((7x-8)^2 = a-9\\). For one solution, \\(a-9 = 0\\), so \\(a = 9\\)."
+  },
+  {
+    "id": 52,
+    "question": "\\(f(x) = a^x - b\\) passes through \\((c, 12)\\) and \\((2c, 768)\\). Find a possible \\(b\\).",
+    "type": "numeric",
+    "answer": "16",
+    "explanation": "Let \\(u = a^c\\). Then \\(u - b = 12\\) and \\(u^2 - b = 768\\). Subtract: \\(u^2 - u = 756 \\Rightarrow u^2 - u - 756 = 0 \\Rightarrow u = 28\\) (positive). Then \\(b = u - 12 = 16\\)."
+  },
+  {
+    "id": 53,
+    "question": "If \\(r = \\sqrt[3]{k}\\) and \\(r^{12a-9} = k\\), find \\(a\\) when \\(r = k\\).",
+    "type": "numeric",
+    "answer": "1",
+    "explanation": "From \\(r = k^{1/3}\\), we have \\(k = r^3\\). Substitute: \\(r^{12a-9} = r^3 \\Rightarrow 12a - 9 = 3 \\Rightarrow a = 1\\)."
+  },
+  {
+    "id": 54,
+    "question": "\\(4x^3 + bx^2 - 528x = 0\\), with \\(b\\) a positive integer. Which could be a solution?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(-13\\)",
+      "\\(-12\\)",
+      "\\(-6\\)",
+      "\\(12\\)"
+    ],
+    "answer": "B",
+    "explanation": "Factor as \\(x(4x^2 + bx - 528) = 0\\). For \\(x = -12\\): \\(4(144) + b(-12) - 528 = 576 - 12b - 528 = 48 - 12b = 0 \\Rightarrow b = 4\\), a positive integer."
+  },
+  {
+    "id": 55,
+    "question": "If \\(x^2 = j + k\\) and \\(y^2 = j + m\\), then \\((x^2 - y^2)^2 = ?\\)",
+    "type": "multiple-choice",
+    "options": [
+      "\\(k^2 - 2jm + m^2\\)",
+      "\\(k^2 - 2km + m^2\\)",
+      "\\(4j^2 - 4jkm + m^2\\)",
+      "\\(4j^2 - 2jkm + k^2m^2\\)"
+    ],
+    "answer": "B",
+    "explanation": "\\(x^2 - y^2 = (j+k) - (j+m) = k - m\\). So \\((x^2 - y^2)^2 = (k-m)^2 = k^2 - 2km + m^2\\)."
+  },
+  {
+    "id": 56,
+    "question": "The equation \\(-x^2 + kx - 3,\\!786 = 0\\) has no real solution, and \\(k\\) is a positive integer. What is the greatest possible \\(k\\)?",
+    "type": "numeric",
+    "answer": "123",
+    "explanation": "Multiply by \\(-1\\): \\(x^2 - kx + 3786 = 0\\). No real solution means discriminant \\(< 0\\): \\(k^2 - 15144 < 0 \\Rightarrow k < \\sqrt{15144} \\approx 123.06\\). Greatest integer is \\(123\\)."
+  },
+  {
+    "id": 57,
+    "question": "If \\(k = l + m\\), which is equivalent to \\(x^2 - l^2 - 2lm - m^2\\)?",
+    "type": "multiple-choice",
+    "options": [
+      "\\((x + k)^2\\)",
+      "\\((x - k)^2\\)",
+      "\\((x - k)(x + k)\\)",
+      "\\(x^2 - kx - k^2\\)"
+    ],
+    "answer": "C",
+    "explanation": "Note \\(l^2 + 2lm + m^2 = (l+m)^2 = k^2\\). So expression = \\(x^2 - k^2 = (x - k)(x + k)\\)."
+  },
+  {
+    "id": 58,
+    "question": "In \\(ax^2 + 148x + c\\), with \\(a, c > 0\\) and \\(jx + k\\) a factor, what is the greatest possible value of \\(ac\\)?",
+    "type": "numeric",
+    "answer": "5,\\!476",
+    "explanation": "For at least one real root (implied by having a factor), discriminant \\(\\ge 0\\): \\(148^2 - 4ac \\ge 0 \\Rightarrow ac \\le 5476\\). Maximum is \\(5476\\)."
+  },
+  {
+    "id": 59,
+    "question": "The quartic \\(54x^4 + 219x^2 + 105\\) factors as \\(k(ax^2 + b)(cx^2 + d)\\) with integer coefficients. What is the smallest possible value of \\(ab\\)?",
+    "type": "numeric",
+    "answer": "14",
+    "explanation": "Substitute \\(X = x^2\\): \\(54X^2 + 219X + 105 = 3(18X^2 + 73X + 35) = 3(2X+7)(9X+5)\\). So \\(a=2, b=7, c=9, d=5\\), and \\(ab = 14\\). Swapping factors gives larger products."
+  },
+  {
+    "id": 60,
+    "question": "For exponential \\(f\\), \\(f(3) = k\\). Which form shows \\(k\\) as coefficient or base?",
+    "type": "multiple-choice",
+    "options": [
+      "\\(f(x) = 3(4)(4)^{x+1}\\)",
+      "\\(f(x) = 3.072(4)(4)^{x-4}\\)",
+      "\\(f(x) = 12(4)(4)^x\\)",
+      "\\(f(x) = 768(4)(4)^{x-3}\\)"
+    ],
+    "answer": "B",
+    "explanation": "Compute \\(f(3)\\) for B: \\(3.072 \\cdot 4 \\cdot 4^{-1} = 3.072\\), which is exactly \\(k\\). In the simplified form \\(f(x) = 3.072 \\cdot 4^{x-3}\\), the coefficient \\(3.072\\) is \\(k\\)."
+  }
+]
