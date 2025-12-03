@@ -41,13 +41,22 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <style>
-      /* Force MathJax inline rendering */
-      mjx-container {
+      /* Force MathJax inline rendering - maximum specificity */
+      mjx-container,
+      mjx-container[jax="SVG"],
+      mjx-container[jax="CHTML"],
+      .MathJax,
+      mjx-math,
+      mjx-mrow,
+      mjx-mi,
+      mjx-mo,
+      mjx-mn {
         display: inline !important;
-        margin: 0 0.1em !important;
         vertical-align: baseline !important;
+        margin: 0 0.08em !important;
       }
-      mjx-container[jax="SVG"][display="true"] {
+      mjx-container[jax="SVG"][display="true"],
+      mjx-container[display="true"] {
         display: block !important;
         margin: 1em auto !important;
       }
