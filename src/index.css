@@ -110,9 +110,40 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  /* MathJax styling */
+  /* MathJax styling - force inline rendering */
   .MathJax {
     @apply text-foreground;
+    display: inline !important;
+  }
+
+  mjx-container {
+    display: inline !important;
+    margin: 0 0.12em !important;
+  }
+
+  mjx-container[jax="SVG"] {
+    display: inline !important;
+    vertical-align: middle;
+  }
+
+  /* Question text should flow naturally as paragraph */
+  .question-text {
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .question-text p {
+    margin-bottom: 0.75em;
+  }
+
+  /* Option text inline flow */
+  .option-text {
+    display: inline;
+  }
+
+  .option-text mjx-container {
+    display: inline !important;
   }
 }
 
@@ -213,6 +244,28 @@
     }
   }
 
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   @keyframes slideOut {
     from {
       opacity: 1;
@@ -222,6 +275,14 @@
       opacity: 0;
       transform: translateX(-20px);
     }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.25s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.25s ease-out;
   }
 
   @keyframes fadeIn {
