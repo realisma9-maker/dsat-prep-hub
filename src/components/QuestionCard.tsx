@@ -78,9 +78,9 @@ export function QuestionCard({
 
       {/* Question Content - Landscape Layout */}
       <div className="p-8">
-        {/* Question Text - Left aligned, proper reading width */}
+        {/* Question Text - Horizontal flow with inline math */}
         <div 
-          className="text-foreground text-base leading-relaxed mb-8 max-w-3xl"
+          className="question-text text-foreground text-base mb-8 max-w-4xl"
           dangerouslySetInnerHTML={{ __html: question.question }}
         />
 
@@ -111,7 +111,7 @@ export function QuestionCard({
                       {letter}
                     </span>
                     <span 
-                      className="flex-1 text-base"
+                      className="option-text flex-1 text-base"
                       dangerouslySetInnerHTML={{ __html: option }}
                     />
                   </button>

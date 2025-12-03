@@ -16,15 +16,21 @@
     <meta name="twitter:site" content="@DSATPractice" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- MathJax for LaTeX rendering -->
+    <!-- MathJax for LaTeX rendering - configured for inline display -->
     <script>
       window.MathJax = {
         tex: {
-          inlineMath: [['\\(', '\\)'], ['$', '$']],
+          inlineMath: [['\\(', '\\)']],
           displayMath: [['\\[', '\\]'], ['$$', '$$']],
         },
         svg: {
-          fontCache: 'global'
+          fontCache: 'global',
+          displayAlign: 'left',
+          displayIndent: '0'
+        },
+        chtml: {
+          displayAlign: 'left',
+          displayIndent: '0'
         },
         startup: {
           pageReady: () => {
@@ -34,6 +40,18 @@
       };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+      /* Force MathJax inline rendering */
+      mjx-container {
+        display: inline !important;
+        margin: 0 0.1em !important;
+        vertical-align: baseline !important;
+      }
+      mjx-container[jax="SVG"][display="true"] {
+        display: block !important;
+        margin: 1em auto !important;
+      }
+    </style>
   </head>
 
   <body>
