@@ -212,26 +212,30 @@
     @apply text-timer-danger animate-pulse;
   }
 
-  /* SAT-style Tables */
+  /* SAT Bluebook-style Tables - Simple, Clean */
   .sat-table {
-    @apply w-full border-collapse my-4 text-sm;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1rem;
+    width: auto;
+    display: inline-table;
   }
 
   .sat-table th,
   .sat-table td {
-    @apply border border-border px-4 py-2 text-center;
+    border: 1px solid hsl(var(--foreground) / 0.3);
+    padding: 0.5rem 1.25rem;
+    text-align: center;
+    background: transparent;
   }
 
   .sat-table th {
-    @apply bg-muted/50 font-semibold text-foreground;
+    font-weight: 500;
+    font-style: italic;
   }
 
   .sat-table td {
-    @apply bg-card text-foreground;
-  }
-
-  .sat-table tbody tr:hover {
-    @apply bg-muted/30;
+    font-weight: 400;
   }
 
   /* Question Images */
@@ -247,6 +251,7 @@
   .desmos-panel {
     @apply transition-all duration-200 ease-out;
     will-change: transform, width, height;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   }
 
   .desmos-panel.dragging {
@@ -256,6 +261,29 @@
 
   .desmos-panel.resizing {
     transition: none !important;
+  }
+
+  /* Desmos Calculator Styling - Better visibility */
+  .desmos-panel .dcg-calculator-api-container {
+    background: #fff !important;
+  }
+
+  .desmos-panel .dcg-exppanel {
+    min-width: 280px !important;
+    max-width: 320px !important;
+  }
+
+  .desmos-panel .dcg-expression-top-level {
+    font-size: 18px !important;
+  }
+
+  .desmos-panel .dcg-keypad {
+    background: #f8f9fa !important;
+  }
+
+  .desmos-panel .dcg-mq-root-block {
+    font-size: 18px !important;
+    min-height: 28px !important;
   }
 }
 
