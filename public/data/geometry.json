@@ -7,9 +7,9 @@
   },
   {
     "geometry_number": 2,
-    "question": "The table gives the volume of two similar cylinders. If the radius of cylinder A is 9 cm, what is the value of \\(j - k\\)?<br><br>| Cylinder | Volume | Surface Area |<br>|----------|--------|--------------|<br>| A | \\(1,296\\pi\\) | \\(k\\pi\\) |<br>| B | \\(162,000\\pi\\) | \\(j\\pi\\) |",
+    "question": "The table gives the volume of two similar cylinders. If the radius of cylinder A is 9 cm, what is the value of \\(j - k\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_8.jpg\" alt=\"Two similar cylinders diagram\"></div><br><table class=\"sat-table\"><thead><tr><th>Cylinder</th><th>Volume</th><th>Surface Area</th></tr></thead><tbody><tr><td>A</td><td>\\(1,296\\pi\\)</td><td>\\(k\\pi\\)</td></tr><tr><td>B</td><td>\\(162,000\\pi\\)</td><td>\\(j\\pi\\)</td></tr></tbody></table>",
     "answer": "10800",
-    "explanation": "Linear scale factor \\(m\\) satisfies \\(m^3 = \\frac{162,000}{1,296} = 125\\), so \\(m = 5\\). For A: \\(h_A = 16\\) cm, \\(k = 450\\). For B: \\(r_B = 45\\), \\(h_B = 80\\), \\(j = 11,250\\). Thus \\(j - k = 10,800\\)."
+    "explanation": "Linear scale factor \\(m\\) satisfies \\(m^3 = \\frac{162,000}{1,296} = 125\\), so \\(m = 5\\).<br><br>For cylinder A: \\(h_A = 16\\) cm, \\(k = 450\\).<br>For cylinder B: \\(r_B = 45\\), \\(h_B = 80\\), \\(j = 11,250\\).<br><br>Thus \\(j - k = 10,800\\)."
   },
   {
     "geometry_number": 3,
@@ -43,15 +43,16 @@
   },
   {
     "geometry_number": 8,
-    "question": "Rectangle A has a width of 50 feet and a length of 45 feet and is located inside rectangle B. A uniform distance \\(x\\), in feet, separates the sides. The area of rectangle B is 2646 square feet. What is the value of \\(x\\)?",
+    "question": "Rectangle A has a width of 50 feet and a length of 45 feet and is located inside rectangle B. A uniform distance \\(x\\), in feet, separates the sides. The area of rectangle B is 2646 square feet. What is the value of \\(x\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_8.jpg\" alt=\"Rectangle A inside Rectangle B with uniform distance x\"></div>",
     "answer": "2",
-    "explanation": "Rectangle B: \\((50+2x)(45+2x) = 2646\\). Solving: \\(x = 2\\)."
+    "explanation": "Rectangle B dimensions: \\((50+2x)\\) by \\((45+2x)\\).<br><br>Area equation: \\((50+2x)(45+2x) = 2646\\)<br><br>Expanding: \\(2250 + 190x + 4x^2 = 2646\\)<br>\\(4x^2 + 190x - 396 = 0\\)<br>\\(2x^2 + 95x - 198 = 0\\)<br><br>Solving: \\(x = 2\\)"
   },
   {
     "geometry_number": 9,
-    "question": "In the given figure, the hypotenuse is 64. What is \\(\\cos x\\)?<br><br>A) \\(\\frac{\\sqrt{3}}{2}\\)<br>B) \\(\\frac{1}{2}\\)<br>C) \\(\\frac{2\\sqrt{3}}{3}\\)<br>D) \\(2\\)",
+    "question": "In the given figure, the hypotenuse is 64. What is \\(\\cos x\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_9.jpg\" alt=\"Right triangle with 60° and x° angles\"></div>",
+    "options": ["\\(\\frac{\\sqrt{3}}{2}\\)", "\\(\\frac{1}{2}\\)", "\\(\\frac{2\\sqrt{3}}{3}\\)", "\\(2\\)"],
     "answer": "A",
-    "explanation": "From the 30-60-90 triangle, \\(\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}\\)."
+    "explanation": "From the figure, the triangle has angles 90°, 60°, and \\(x°\\).<br><br>Since angles sum to 180°: \\(90 + 60 + x = 180\\), so \\(x = 30°\\).<br><br>\\(\\cos 30° = \\frac{\\sqrt{3}}{2}\\)"
   },
   {
     "geometry_number": 10,
@@ -97,45 +98,49 @@
   },
   {
     "geometry_number": 17,
-    "question": "In the figure, lines a and b are parallel. What is the value of \\(x + y\\)?",
+    "question": "In the figure, lines a and b are parallel. What is the value of \\(x + y\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_17.jpg\" alt=\"Parallel lines a and b with intersecting lines\"></div>",
     "answer": "22",
-    "explanation": "Using properties of parallel lines and transversals, \\(x + y = 22\\)."
+    "explanation": "From the figure with parallel lines and transversals:<br><br>Using angle relationships (corresponding, alternate interior, etc.), we can determine that \\(x + y = 22\\)."
   },
   {
     "geometry_number": 18,
-    "question": "An equilateral triangle with side lengths of \\(k\\) is inscribed in a circle. Which defines the radius \\(r\\)?<br><br>A) \\(\\frac{k}{2}\\)<br>B) \\(\\frac{k\\sqrt{3}}{6}\\)<br>C) \\(\\frac{k\\sqrt{3}}{3}\\)<br>D) \\(\\frac{k\\sqrt{3}}{2}\\)",
+    "question": "An equilateral triangle with side lengths of \\(k\\) is inscribed in a circle. Which defines the radius \\(r\\)?",
+    "options": ["\\(\\frac{k}{2}\\)", "\\(\\frac{k\\sqrt{3}}{6}\\)", "\\(\\frac{k\\sqrt{3}}{3}\\)", "\\(\\frac{k\\sqrt{3}}{2}\\)"],
     "answer": "C",
-    "explanation": "Circumradius = \\(\\frac{k}{\\sqrt{3}} = \\frac{k\\sqrt{3}}{3}\\)."
+    "explanation": "For an equilateral triangle inscribed in a circle:<br><br>Circumradius \\(r = \\frac{k}{\\sqrt{3}} = \\frac{k\\sqrt{3}}{3}\\)"
   },
   {
     "geometry_number": 19,
-    "question": "Triangle ABC is equilateral with height 30 meters. What is the perimeter?<br><br>A) \\(60\\sqrt{3}\\)<br>B) \\(90\\)<br>C) \\(90\\sqrt{3}\\)<br>D) \\(120\\sqrt{3}\\)",
+    "question": "Triangle ABC is equilateral with height 30 meters. What is the perimeter?",
+    "options": ["\\(60\\sqrt{3}\\)", "\\(90\\)", "\\(90\\sqrt{3}\\)", "\\(120\\sqrt{3}\\)"],
     "answer": "A",
-    "explanation": "Height = \\(\\frac{s\\sqrt{3}}{2} = 30\\), so \\(s = 20\\sqrt{3}\\). Perimeter = \\(60\\sqrt{3}\\)."
+    "explanation": "Height of equilateral triangle: \\(h = \\frac{s\\sqrt{3}}{2}\\)<br><br>\\(30 = \\frac{s\\sqrt{3}}{2}\\) → \\(s = \\frac{60}{\\sqrt{3}} = 20\\sqrt{3}\\)<br><br>Perimeter = \\(3s = 60\\sqrt{3}\\)"
   },
   {
     "geometry_number": 20,
     "question": "A rectangular area consists of 3,179 equal squares with area \\(k\\) each. If length is 2.75 times width and width = \\(x\\sqrt{k}\\), what is \\(x\\)?",
     "answer": "34",
-    "explanation": "Total area = \\(3179k = 2.75x^2 k\\). Solving: \\(x = 34\\)."
+    "explanation": "Total area = \\(3179k\\)<br><br>Width = \\(x\\sqrt{k}\\), Length = \\(2.75x\\sqrt{k}\\)<br><br>Area: \\(2.75x^2 k = 3179k\\)<br>\\(x^2 = \\frac{3179}{2.75} = 1156\\)<br>\\(x = 34\\)"
   },
   {
     "geometry_number": 21,
-    "question": "In the figure, BC is the diameter of the circle. If BC = 132 and AB = \\(\\sqrt{363}\\), what is \\(\\frac{BC}{BD}\\)?",
+    "question": "In the figure, BC is the diameter of the circle. If BC = 132 and AB = \\(\\sqrt{363}\\), what is \\(\\frac{BC}{BD}\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_21.jpg\" alt=\"Circle with BC as diameter, points A, B, C, D\"></div>",
     "answer": "48",
-    "explanation": "Using circle properties, \\(\\frac{BC}{BD} = 48\\)."
+    "explanation": "Since BC is the diameter, angle BAC = 90° (inscribed angle on semicircle).<br><br>Using the Pythagorean theorem and circle properties:<br>\\(\\frac{BC}{BD} = 48\\)"
   },
   {
     "geometry_number": 22,
-    "question": "Two similar rectangular prisms have volumes 4,374 and 1,500,282 cubic inches. Prism A has surface area 1,782. What is the surface area \\(k\\) of prism B?<br><br>A) 5,346<br>B) 12,474<br>C) 87,318<br>D) 611,226",
+    "question": "Two similar rectangular prisms have volumes 4,374 and 1,500,282 cubic inches. Prism A has surface area 1,782. What is the surface area \\(k\\) of prism B?",
+    "options": ["5,346", "12,474", "87,318", "611,226"],
     "answer": "C",
-    "explanation": "Volume ratio = 343 = 7³. Surface area ratio = 49. \\(k = 49 \\times 1,782 = 87,318\\)."
+    "explanation": "Volume ratio = \\(\\frac{1,500,282}{4,374} = 343 = 7^3\\)<br><br>Linear scale factor = 7<br>Surface area ratio = \\(7^2 = 49\\)<br><br>\\(k = 49 \\times 1,782 = 87,318\\)"
   },
   {
     "geometry_number": 23,
-    "question": "Parallel lines a and b are intersected by lines c, d, and e. If \\(x = 54\\), \\(v = 127\\), and \\(w > x\\), which is true about y and z?<br><br>A) \\(z > y\\)<br>B) \\(z < y\\)<br>C) \\(z = y\\)<br>D) \\(z + y = 90\\)",
+    "question": "Parallel lines a and b are intersected by lines c, d, and e. If \\(x = 54\\), \\(v = 127\\), and \\(w > x\\), which is true about y and z?<br><br><div class=\"question-image\"><img src=\"/images/question_23.jpg\" alt=\"Parallel lines a and b intersected by lines c, d, and e\"></div>",
+    "options": ["\\(z > y\\)", "\\(z < y\\)", "\\(z = y\\)", "\\(z + y = 90\\)"],
     "answer": "B",
-    "explanation": "From the given conditions, \\(z < y\\)."
+    "explanation": "Using properties of parallel lines and transversals with the given angle values:<br><br>\\(z < y\\)"
   },
   {
     "geometry_number": 24,
@@ -175,15 +180,16 @@
   },
   {
     "geometry_number": 30,
-    "question": "Lines a and b are intersected by line k. Which is sufficient to prove a and b are parallel?<br><br>A) \\(180 - y = x\\)<br>B) \\(x = 180 - z\\)<br>C) \\(y + z = 180 - x\\)<br>D) \\(180 - z = y\\)",
+    "question": "Lines a and b are intersected by line k. Which is sufficient to prove a and b are parallel?<br><br><div class=\"question-image\"><img src=\"/images/question_30.jpg\" alt=\"Lines a and b intersected by line k with angles x, y, z\"></div>",
+    "options": ["\\(180 - y = x\\)", "\\(x = 180 - z\\)", "\\(y + z = 180 - x\\)", "\\(180 - z = y\\)"],
     "answer": "D",
-    "explanation": "Condition D implies supplementary consecutive interior angles, proving parallel lines."
+    "explanation": "For lines a and b to be parallel, we need supplementary consecutive interior angles.<br><br>Condition D (\\(180 - z = y\\) or \\(y + z = 180\\)) implies that angles y and z are supplementary consecutive interior angles, which proves parallel lines."
   },
   {
     "geometry_number": 31,
-    "question": "For the given circle, arc abc = \\(130 + 7x\\) degrees and arc acb = \\(90 - 3x\\) degrees. What is \\(x\\)?",
+    "question": "For the given circle, arc abc = \\(130 + 7x\\) degrees and arc acb = \\(90 - 3x\\) degrees. What is \\(x\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_31.jpg\" alt=\"Circle with arcs abc and acb\"></div>",
     "answer": "35",
-    "explanation": "\\((130+7x) + (90-3x) = 360\\). Solving: \\(x = 35\\)."
+    "explanation": "The sum of all arcs in a circle = 360°.<br><br>\\((130 + 7x) + (90 - 3x) = 360\\)<br>\\(220 + 4x = 360\\)<br>\\(4x = 140\\)<br>\\(x = 35\\)"
   },
   {
     "geometry_number": 32,
