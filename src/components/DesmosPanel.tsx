@@ -12,8 +12,8 @@ interface DesmosPanelProps {
 
 export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [size, setSize] = useState({ width: 450, height: 400 });
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [size, setSize] = useState({ width: 520, height: 480 });
+  const [position, setPosition] = useState({ x: 80, y: 80 });
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -50,7 +50,8 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
           trace: true,
           border: false,
           lockViewport: false,
-          fontSize: 16,
+          fontSize: 20,
+          expressionsCollapsed: false,
         });
       }
     };
@@ -108,8 +109,8 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
       const dx = e.clientX - resizeStart.current.x;
       const dy = e.clientY - resizeStart.current.y;
       setSize({
-        width: Math.max(320, Math.min(900, resizeStart.current.width + dx)),
-        height: Math.max(280, Math.min(700, resizeStart.current.height + dy)),
+        width: Math.max(400, Math.min(1000, resizeStart.current.width + dx)),
+        height: Math.max(350, Math.min(800, resizeStart.current.height + dy)),
       });
     });
   }, []);
@@ -259,7 +260,7 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
       <div 
         ref={calculatorRef} 
         style={{ height: size.height }}
-        className="bg-white"
+        className="bg-white overflow-auto"
       />
 
       {/* Resize handle - larger hit area */}

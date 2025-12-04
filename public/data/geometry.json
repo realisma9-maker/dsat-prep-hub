@@ -7,7 +7,7 @@
   },
   {
     "geometry_number": 2,
-    "question": "The table gives the volume of two similar cylinders. If the radius of cylinder A is 9 cm, what is the value of \\(j - k\\)?<br><br><div class=\"question-image\"><img src=\"/images/question_8.jpg\" alt=\"Two similar cylinders diagram\"></div><br><table class=\"sat-table\"><thead><tr><th>Cylinder</th><th>Volume</th><th>Surface Area</th></tr></thead><tbody><tr><td>A</td><td>\\(1,296\\pi\\)</td><td>\\(k\\pi\\)</td></tr><tr><td>B</td><td>\\(162,000\\pi\\)</td><td>\\(j\\pi\\)</td></tr></tbody></table>",
+    "question": "The table gives the volume of two similar cylinders. If the radius of cylinder A is 9 cm, what is the value of \\(j - k\\)?<br><br><table class=\"sat-table\"><thead><tr><th>Cylinder</th><th>Volume</th><th>Surface Area</th></tr></thead><tbody><tr><td>A</td><td>\\(1,296\\pi\\)</td><td>\\(k\\pi\\)</td></tr><tr><td>B</td><td>\\(162,000\\pi\\)</td><td>\\(j\\pi\\)</td></tr></tbody></table>",
     "answer": "10800",
     "explanation": "Linear scale factor \\(m\\) satisfies \\(m^3 = \\frac{162,000}{1,296} = 125\\), so \\(m = 5\\).<br><br>For cylinder A: \\(h_A = 16\\) cm, \\(k = 450\\).<br>For cylinder B: \\(r_B = 45\\), \\(h_B = 80\\), \\(j = 11,250\\).<br><br>Thus \\(j - k = 10,800\\)."
   },
