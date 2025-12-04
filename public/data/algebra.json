@@ -151,9 +151,9 @@
   },
   {
     "id": 16,
-    "question": "The table gives two values of \\(x\\) and their corresponding values of \\(g(x)\\), where \\(g(x) = \\frac{f(x)+5}{x+8}\\) and \\(f\\) is a linear function. What is the \\(y\\)-coordinate of the \\(y\\)-intercept of the graph \\(y = f(x)\\) in the \\(xy\\)-plane?\\n\\n| x | g(x) |\\n|---|------|\\n| 4 | 9    |\\n| 2 | 0    |",
+    "question": "The table gives two values of \\(x\\) and their corresponding values of \\(g(x)\\), where \\(g(x) = \\frac{f(x)+5}{x+8}\\) and \\(f\\) is a linear function. What is the \\(y\\)-coordinate of the \\(y\\)-intercept of the graph \\(y = f(x)\\) in the \\(xy\\)-plane?<br><br><table class=\"sat-table\"><thead><tr><th>x</th><th>g(x)</th></tr></thead><tbody><tr><td>4</td><td>9</td></tr><tr><td>2</td><td>0</td></tr></tbody></table>",
     "answer": "-113",
-    "explanation": "Let \\(f(x)=mx+b\\)\\nThen \\(g(x)=\\frac{mx+b+5}{x+8}\\)\\nFrom table:\\n\\(g(4)=9\\) → \\(\\frac{4m+b+5}{12}=9\\) → \\(4m+b=103\\)\\n\\(g(2)=0\\) → \\(\\frac{2m+b+5}{10}=0\\) → \\(2m+b=-5\\)\\nSubtract: \\(2m=108\\) → \\(m=54\\)\\nThen \\(2(54)+b=-5\\) → \\(108+b=-5\\) → \\(b=-113\\)\\n\\(y\\)-intercept of \\(f(x)\\) is \\(b = -113\\)"
+    "explanation": "Let \\(f(x)=mx+b\\). Then \\(g(x)=\\frac{mx+b+5}{x+8}\\).<br><br>From the table:<br>• \\(g(4)=9\\) → \\(\\frac{4m+b+5}{12}=9\\) → \\(4m+b=103\\)<br>• \\(g(2)=0\\) → \\(\\frac{2m+b+5}{10}=0\\) → \\(2m+b=-5\\)<br><br>Subtract: \\(2m=108\\) → \\(m=54\\)<br>Then \\(2(54)+b=-5\\) → \\(b=-113\\)<br><br>The \\(y\\)-intercept of \\(f(x)\\) is \\(b = -113\\)"
   },
   {
     "id": 17,
@@ -175,9 +175,9 @@
   },
   {
     "id": 19,
-    "question": "Three points on the quadratic function \\(f(x)\\) are given in the table. If \\(g(x) = f(x + 4)\\), what is the \\(y\\)-intercept of the function \\(g(x)\\)?\\n\\n| x | f(x) |\\n|---|------|\\n| -9 | 155  |\\n| -3 | 227  |\\n| 3  | 155  |",
+    "question": "Three points on the quadratic function \\(f(x)\\) are given in the table. If \\(g(x) = f(x + 4)\\), what is the \\(y\\)-intercept of the function \\(g(x)\\)?<br><br><table class=\"sat-table\"><thead><tr><th>x</th><th>f(x)</th></tr></thead><tbody><tr><td>−9</td><td>155</td></tr><tr><td>−3</td><td>227</td></tr><tr><td>3</td><td>155</td></tr></tbody></table>",
     "answer": "129",
-    "explanation": "Points at x=-9 and x=3 have same y=155 → vertex at x=-3\\n\\(f(x) = a(x+3)^2 + 227\\)\\nUse point (3,155): \\(a(3+3)^2 + 227 = 155\\) → \\(36a = -72\\) → \\(a=-2\\)\\n\\(f(x) = -2(x+3)^2 + 227\\)\\n\\(g(x) = f(x+4) = -2(x+4+3)^2 + 227 = -2(x+7)^2 + 227\\)\\n\\(y\\)-intercept: \\(g(0) = -2(49)+227 = -98+227=129\\)"
+    "explanation": "Points at \\(x=-9\\) and \\(x=3\\) have same \\(y=155\\) → vertex at \\(x=-3\\).<br><br>\\(f(x) = a(x+3)^2 + 227\\)<br><br>Use point \\((3,155)\\): \\(a(3+3)^2 + 227 = 155\\) → \\(36a = -72\\) → \\(a=-2\\)<br><br>\\(f(x) = -2(x+3)^2 + 227\\)<br>\\(g(x) = f(x+4) = -2(x+7)^2 + 227\\)<br><br>\\(y\\)-intercept: \\(g(0) = -2(49)+227 = 129\\)"
   },
   {
     "id": 20,

@@ -211,6 +211,52 @@
   .timer-danger {
     @apply text-timer-danger animate-pulse;
   }
+
+  /* SAT-style Tables */
+  .sat-table {
+    @apply w-full border-collapse my-4 text-sm;
+  }
+
+  .sat-table th,
+  .sat-table td {
+    @apply border border-border px-4 py-2 text-center;
+  }
+
+  .sat-table th {
+    @apply bg-muted/50 font-semibold text-foreground;
+  }
+
+  .sat-table td {
+    @apply bg-card text-foreground;
+  }
+
+  .sat-table tbody tr:hover {
+    @apply bg-muted/30;
+  }
+
+  /* Question Images */
+  .question-image {
+    @apply my-4 flex justify-center;
+  }
+
+  .question-image img {
+    @apply max-w-full h-auto max-h-64 rounded-lg border border-border shadow-sm;
+  }
+
+  /* Desmos Panel Smooth Transitions */
+  .desmos-panel {
+    @apply transition-all duration-200 ease-out;
+    will-change: transform, width, height;
+  }
+
+  .desmos-panel.dragging {
+    @apply cursor-grabbing select-none;
+    transition: none !important;
+  }
+
+  .desmos-panel.resizing {
+    transition: none !important;
+  }
 }
 
 @layer utilities {

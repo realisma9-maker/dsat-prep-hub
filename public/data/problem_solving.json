@@ -156,15 +156,15 @@
   },
   {
     "number": 21,
-    "question": "Each of the following frequency tables represents a data set. Which of these frequency tables represent the data set with the smallest standard deviation?",
+    "question": "Each of the following frequency tables represents a data set. Which of these frequency tables represent the data set with the smallest standard deviation?<br><br><strong>Table A:</strong><table class=\"sat-table\"><thead><tr><th>Value</th><th>2</th><th>10</th><th>15</th><th>20</th><th>24</th></tr></thead><tbody><tr><td>Frequency</td><td>1</td><td>5</td><td>3</td><td>5</td><td>1</td></tr></tbody></table><br><strong>Table B:</strong><table class=\"sat-table\"><thead><tr><th>Value</th><th>2</th><th>10</th><th>15</th><th>20</th><th>24</th></tr></thead><tbody><tr><td>Frequency</td><td>0</td><td>20</td><td>25</td><td>20</td><td>0</td></tr></tbody></table><br><strong>Table C:</strong><table class=\"sat-table\"><thead><tr><th>Value</th><th>2</th><th>10</th><th>15</th><th>20</th><th>24</th></tr></thead><tbody><tr><td>Frequency</td><td>100</td><td>50</td><td>25</td><td>0</td><td>25</td></tr></tbody></table><br><strong>Table D:</strong><table class=\"sat-table\"><thead><tr><th>Value</th><th>2</th><th>10</th><th>15</th><th>20</th><th>24</th></tr></thead><tbody><tr><td>Frequency</td><td>45</td><td>55</td><td>65</td><td>75</td><td>85</td></tr></tbody></table>",
     "choices": [
-      "A) Values: 2(1), 10(5), 15(3), 20(5), 24(1)",
-      "B) Values: 2(0), 10(20), 15(25), 20(20), 24(0)",
-      "C) Values: 2(100), 10(50), 15(25), 20(0), 24(25)",
-      "D) Values: 2(45), 10(55), 15(65), 20(75), 24(85)"
+      "A",
+      "B",
+      "C",
+      "D"
     ],
     "answer": "B",
-    "explanation": "Standard deviation measures spread. In table B, all data is clustered around 10, 15, 20 with no values at extremes (2 and 24 have 0 frequency). This results in the smallest spread."
+    "explanation": "Standard deviation measures spread around the mean.<br><br>In <strong>Table B</strong>, all data is clustered around values 10, 15, and 20. The extreme values (2 and 24) have <strong>0 frequency</strong>, meaning no data points exist at the extremes.<br><br>This concentration of data near the center results in the <strong>smallest standard deviation</strong> compared to the other tables."
   },
   {
     "number": 22,

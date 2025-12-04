@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Calculator, Maximize2, Minimize2, X, GripVertical } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -19,8 +19,9 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
   const panelRef = useRef<HTMLDivElement>(null);
   const calculatorRef = useRef<HTMLDivElement>(null);
   const calculatorInstance = useRef<any>(null);
-  const dragStart = useRef({ x: 0, y: 0 });
+  const dragStart = useRef({ x: 0, y: 0, posX: 0, posY: 0 });
   const resizeStart = useRef({ width: 0, height: 0, x: 0, y: 0 });
+  const animationFrame = useRef<number | null>(null);
 
   // Load Desmos API script
   useEffect(() => {
@@ -49,6 +50,7 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
           trace: true,
           border: false,
           lockViewport: false,
+          fontSize: 16,
         });
       }
     };
@@ -76,63 +78,94 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
 
   // Resize calculator when size changes
   useEffect(() => {
-    if (calculatorInstance.current) {
+    if (calculatorInstance.current && !isResizing) {
       calculatorInstance.current.resize();
     }
-  }, [size, isFullscreen]);
+  }, [size, isFullscreen, isResizing]);
+
+  // Smooth drag handler with RAF
+  const handleDrag = useCallback((e: MouseEvent) => {
+    if (animationFrame.current) {
+      cancelAnimationFrame(animationFrame.current);
+    }
+
+    animationFrame.current = requestAnimationFrame(() => {
+      const dx = e.clientX - dragStart.current.x;
+      const dy = e.clientY - dragStart.current.y;
+      const newX = Math.max(0, Math.min(window.innerWidth - size.width, dragStart.current.posX + dx));
+      const newY = Math.max(0, Math.min(window.innerHeight - size.height - 100, dragStart.current.posY + dy));
+      setPosition({ x: newX, y: newY });
+    });
+  }, [size]);
+
+  // Smooth resize handler with RAF
+  const handleResize = useCallback((e: MouseEvent) => {
+    if (animationFrame.current) {
+      cancelAnimationFrame(animationFrame.current);
+    }
+
+    animationFrame.current = requestAnimationFrame(() => {
+      const dx = e.clientX - resizeStart.current.x;
+      const dy = e.clientY - resizeStart.current.y;
+      setSize({
+        width: Math.max(320, Math.min(900, resizeStart.current.width + dx)),
+        height: Math.max(280, Math.min(700, resizeStart.current.height + dy)),
+      });
+    });
+  }, []);
 
   // Handle dragging
   useEffect(() => {
     if (!isDragging) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const dx = e.clientX - dragStart.current.x;
-      const dy = e.clientY - dragStart.current.y;
-      setPosition(prev => ({
-        x: Math.max(0, Math.min(window.innerWidth - size.width, prev.x + dx)),
-        y: Math.max(0, Math.min(window.innerHeight - size.height - 100, prev.y + dy)),
-      }));
-      dragStart.current = { x: e.clientX, y: e.clientY };
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
     };
 
-    const handleMouseUp = () => setIsDragging(false);
-
-    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleDrag);
     document.addEventListener('mouseup', handleMouseUp);
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousemove', handleDrag);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isDragging, size]);
+  }, [isDragging, handleDrag]);
 
   // Handle resizing
   useEffect(() => {
     if (!isResizing) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const dx = e.clientX - resizeStart.current.x;
-      const dy = e.clientY - resizeStart.current.y;
-      setSize({
-        width: Math.max(300, Math.min(800, resizeStart.current.width + dx)),
-        height: Math.max(250, Math.min(600, resizeStart.current.height + dy)),
-      });
+    const handleMouseUp = () => {
+      setIsResizing(false);
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+      // Resize calculator after resize completes
+      if (calculatorInstance.current) {
+        calculatorInstance.current.resize();
+      }
     };
 
-    const handleMouseUp = () => setIsResizing(false);
-
-    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleResize);
     document.addEventListener('mouseup', handleMouseUp);
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousemove', handleResize);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isResizing]);
+  }, [isResizing, handleResize]);
 
   const handleDragStart = (e: React.MouseEvent) => {
     if (isFullscreen) return;
     e.preventDefault();
     setIsDragging(true);
-    dragStart.current = { x: e.clientX, y: e.clientY };
+    dragStart.current = { 
+      x: e.clientX, 
+      y: e.clientY, 
+      posX: position.x, 
+      posY: position.y 
+    };
   };
 
   const handleResizeStart = (e: React.MouseEvent) => {
@@ -183,18 +216,20 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
     <div
       ref={panelRef}
       className={cn(
-        "fixed bg-card rounded-lg border border-border shadow-xl z-40 overflow-hidden",
-        isDragging && "cursor-grabbing select-none"
+        "fixed bg-card rounded-lg border border-border shadow-xl z-40 overflow-hidden desmos-panel",
+        isDragging && "dragging",
+        isResizing && "resizing"
       )}
       style={{
         left: position.x,
         top: position.y,
         width: size.width,
+        transform: 'translateZ(0)', // GPU acceleration
       }}
     >
       {/* Header */}
       <div
-        className="flex items-center justify-between px-3 py-2 border-b border-border bg-muted/50 cursor-grab active:cursor-grabbing"
+        className="flex items-center justify-between px-3 py-2 border-b border-border bg-muted/50 cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleDragStart}
       >
         <div className="flex items-center gap-2">
@@ -221,16 +256,22 @@ export function DesmosPanel({ isCollapsed, onToggleCollapse }: DesmosPanelProps)
       </div>
 
       {/* Calculator */}
-      <div ref={calculatorRef} style={{ height: size.height }} />
+      <div 
+        ref={calculatorRef} 
+        style={{ height: size.height }}
+        className="bg-white"
+      />
 
-      {/* Resize handle */}
+      {/* Resize handle - larger hit area */}
       <div
-        className="absolute bottom-0 right-0 w-5 h-5 cursor-se-resize hover:bg-primary/10 transition-colors"
+        className="absolute bottom-0 right-0 w-6 h-6 cursor-se-resize group"
         onMouseDown={handleResizeStart}
       >
-        <svg className="w-full h-full text-muted-foreground/60 p-0.5" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M22,22H20V20H22V22M22,18H20V16H22V18M18,22H16V20H18V22M18,18H16V16H18V18M14,22H12V20H14V22M22,14H20V12H22V14Z" />
-        </svg>
+        <div className="absolute bottom-1 right-1 w-4 h-4 rounded-sm opacity-60 group-hover:opacity-100 transition-opacity">
+          <svg className="w-full h-full text-muted-foreground" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M22,22H20V20H22V22M22,18H20V16H22V18M18,22H16V20H18V22M18,18H16V16H18V18M14,22H12V20H14V22M22,14H20V12H22V14Z" />
+          </svg>
+        </div>
       </div>
     </div>
   );
